@@ -1,29 +1,54 @@
-import { Box, Button, Container, Stack, TextField, Typography } from '@mui/material';
-import { useState } from 'react'
+import { Box, Button, Container, List, ListItem, Stack, TextareaAutosize, TextField, Typography } from '@mui/material';
+import { margin } from '@mui/system';
+import { useEffect, useState } from 'react'
 import Bar from './Bar';
 
 const defaultUrl = "https://www.joysound.com/web/karaoke/ranking/age/ranking?age=1990&startIndex=0&search=1990#jp-cmp-main"
 
+type History = {
+  list: {
+    number: number,
+    time: number,
+  }[]
+}
+
+// ミリ秒
+const day = 86400000
+
+/** 
+ * 機能
+ * ・乱数が振れる
+ * ・リンクを出す
+ * ・履歴保存（24時間？）
+ * ・
+ * https://www.joysound.com/web/karaoke/ranking/age/ranking?age=1990&startIndex=50&search=1990#jp-cmp-main
+ */
 function App() {
   const [max, setMax] = useState(500)
   const [min, setMin] = useState(1)
   const [rand, setRand] = useState(0)
+  const [isDuplication, setDuplication] = useState(false)
+  const [history, setHistory] = useState<History>({ list: [] })
   const [url, setUrl] = useState(defaultUrl)
 
   const createRandom = () => {
-    setRand(Math.ceil(Math.random() * (max - min + 1)) + min - 1)
+    const randamNum = Math.ceil(Math.random() * (max - min + 1)) + min - 1
+    // 履歴に追加
+    setHistory({ list: [{ number: randamNum, time: new Date().getTime() }, ...history.list] })
+    // 重複確認
+    setDuplication(history.list.map(li => li.number).includes(randamNum))
+
+    setRand(randamNum)
     // 乱数の正確性確認
     // let sum = 0
     // for (let i = 0; i < 100000000; i++)
     //   sum += Math.ceil(Math.random() * (max - min + 1)) + min - 1
     // console.log(sum)
-
-    createUrl()
   }
 
   const createUrl = () => {
-    const urlObj = new URL(url)
-    const stIdx = (Math.ceil(rand / 50) - 1) * 50
+    const urlObj = new URL(defaultUrl)
+    const stIdx = (Math.floor(rand / 50)) * 50
     // start
     urlObj.search = urlObj.search.split('&').map((param) => {
       if (param.includes('startIndex')) {
@@ -33,26 +58,43 @@ function App() {
       }
     }).join('&')
     setUrl(urlObj.href)
-    console.dir(urlObj)
   }
 
-  /** 
-   * 機能
-   * ・乱数が振れる
-   * ・リンクを出す
-   * ・履歴保存（24時間？）
-   * ・
-   * https://www.joysound.com/web/karaoke/ranking/age/ranking?age=1990&startIndex=50&search=1990#jp-cmp-main
-   */
+  const storeHistory = () => {
+    if (history.list.length) {
+      localStorage.setItem('karaHistory', JSON.stringify(history))
+    }
+  }
+
+  useEffect(createUrl, [rand])
+  useEffect(storeHistory, [history])
+
+  useEffect(() => {
+    // 履歴の初期取得
+    const historyJson = localStorage.getItem('karaHistory')
+    try {
+      if (historyJson) {
+        // 24時間経過してるやつを捨てる
+        const history = { list: (JSON.parse(historyJson) as History).list.filter((his) => new Date().getTime() - his.time < day) }
+        setHistory(history)
+      }
+    } catch {
+      console.error('json parse error')
+    }
+  }, [])
+
+  const historyList = history.list.map((h) => <Typography sx={{ m: '0.5rem' }} key={h.time}>{h.number}</Typography>)
+  const open = () => window.open(url)
 
   return (
     <div>
       <Bar />
-      <Container sx={{ width: '480px', m: '16px' }}>
+      <Container sx={{ maxWidth: '480px' }}>
         <Stack spacing={2} >
           <Stack spacing={3} direction="row" justifyContent="center">
             <Box alignSelf="center" width="150px">
               <Typography variant="h2">{rand}</Typography>
+              {isDuplication && <Typography color="error">※重複</Typography>}
             </Box>
             <Stack spacing={3} justifyContent="center">
               <TextField label="最大値" value={max} type="number" onChange={(e) => setMax(Number(e.target.value))} />
@@ -60,9 +102,12 @@ function App() {
             </Stack>
           </Stack>
           <Button sx={{ width: '100%' }} variant="contained" onClick={createRandom}>生成</Button>
+          <Button onClick={open} variant="outlined" >開く</Button>
+          <Typography>URL</Typography>
+          <TextareaAutosize minRows={5} value={url} onChange={(e) => setUrl(e.target.value)} />
+          <Typography>履歴：{history.list.length}件</Typography>
+          <List sx={{ display: 'flex', flexWrap: 'wrap' }}>{historyList}</List>
         </Stack>
-        <TextField label="base url" value={min} type="number" onChange={(e) => setMin(Number(e.target.value))} />
-        <Button onClick={() => window.open(url)}>開く</Button>
       </Container>
     </div >
   );
