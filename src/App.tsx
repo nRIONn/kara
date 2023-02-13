@@ -1,9 +1,8 @@
-import { Box, Button, Container, List, ListItem, Stack, TextareaAutosize, TextField, Typography } from '@mui/material';
-import { margin } from '@mui/system';
+import { Box, Button, Container, List, Stack, TextareaAutosize, TextField, Typography } from '@mui/material';
 import { useEffect, useState } from 'react'
 import Bar from './Bar';
 
-const defaultUrl = "https://www.joysound.com/web/karaoke/ranking/age/ranking?age=1990&startIndex=0&search=1990#jp-cmp-main"
+const defaultUrl = "https://www.joysound.com/web/karaoke/ranking/age/ranking?age=1995&startIndex=0&search=1990#jp-cmp-main"
 
 type History = {
   list: {
@@ -47,7 +46,7 @@ function App() {
   }
 
   const createUrl = () => {
-    const urlObj = new URL(defaultUrl)
+    const urlObj = new URL(url)
     const stIdx = (Math.floor(rand / 50)) * 50
     // start
     urlObj.search = urlObj.search.split('&').map((param) => {
@@ -66,6 +65,7 @@ function App() {
     }
   }
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(createUrl, [rand])
   useEffect(storeHistory, [history])
 
@@ -86,6 +86,11 @@ function App() {
   const historyList = history.list.map((h) => <Typography sx={{ m: '0.5rem' }} key={h.time}>{h.number}</Typography>)
   const open = () => window.open(url)
 
+  const deleteHistory = () => {
+    localStorage.clear()
+    setHistory({ list: [] })
+  }
+
   return (
     <div>
       <Bar />
@@ -105,7 +110,10 @@ function App() {
           <Button onClick={open} variant="outlined" >開く</Button>
           <Typography>URL</Typography>
           <TextareaAutosize minRows={5} value={url} onChange={(e) => setUrl(e.target.value)} />
-          <Typography>履歴：{history.list.length}件</Typography>
+          <Stack direction="row" sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <Typography>履歴：{history.list.length}件</Typography>
+            <Button variant='contained' onClick={deleteHistory}>履歴削除</Button>
+          </Stack>
           <List sx={{ display: 'flex', flexWrap: 'wrap' }}>{historyList}</List>
         </Stack>
       </Container>
