@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/kara/static/css/main.e6c13ad2.css",
-    "main.js": "/kara/static/js/main.d0574d17.js",
+    "main.js": "/kara/static/js/main.d37d459b.js",
     "static/js/787.b150b4e2.chunk.js": "/kara/static/js/787.b150b4e2.chunk.js",
     "index.html": "/kara/index.html",
     "main.e6c13ad2.css.map": "/kara/static/css/main.e6c13ad2.css.map",
-    "main.d0574d17.js.map": "/kara/static/js/main.d0574d17.js.map",
+    "main.d37d459b.js.map": "/kara/static/js/main.d37d459b.js.map",
     "787.b150b4e2.chunk.js.map": "/kara/static/js/787.b150b4e2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.d0574d17.js"
+    "static/js/main.d37d459b.js"
   ]
 }
