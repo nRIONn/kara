@@ -35,7 +35,7 @@ function App() {
 
     const duplictate = history.list.map(li => li.number).includes(randamNum)
 
-    if (duplictate) {
+    if (!duplictate) {
       // 履歴に追加
       setHistory({ list: [{ number: randamNum, time: new Date().getTime() }, ...history.list] })
     }
