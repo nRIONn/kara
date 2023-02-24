@@ -114,7 +114,7 @@ function App() {
             </Stack>
           </Stack>
           <Button sx={{ width: '100%' }} variant="contained" onClick={createRandom}>生成</Button>
-          <Button onClick={open} variant="outlined" >開く</Button>
+          <a href={url}><Button variant="outlined" sx={{ width: '100%' }}>開く</Button></a>
           <Typography>URL</Typography>
           <TextareaAutosize minRows={5} value={url} onChange={(e) => setUrl(e.target.value)} />
           <Stack direction="row" sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
