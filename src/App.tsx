@@ -32,10 +32,16 @@ function App() {
 
   const createRandom = () => {
     const randamNum = Math.ceil(Math.random() * (max - min + 1)) + min - 1
-    // 履歴に追加
-    setHistory({ list: [{ number: randamNum, time: new Date().getTime() }, ...history.list] })
+
+    const duplictate = history.list.map(li => li.number).includes(randamNum)
+
+    if (duplictate) {
+      // 履歴に追加
+      setHistory({ list: [{ number: randamNum, time: new Date().getTime() }, ...history.list] })
+    }
+
     // 重複確認
-    setDuplication(history.list.map(li => li.number).includes(randamNum))
+    setDuplication(duplictate)
 
     setRand(randamNum)
     // 乱数の正確性確認
@@ -47,7 +53,7 @@ function App() {
 
   const createUrl = () => {
     const urlObj = new URL(url)
-    const stIdx = (Math.floor(rand / 50)) * 50
+    const stIdx = (Math.floor((rand + 1) / 50)) * 50
     // start
     urlObj.search = urlObj.search.split('&').map((param) => {
       if (param.includes('startIndex')) {
