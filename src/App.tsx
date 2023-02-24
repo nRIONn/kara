@@ -53,7 +53,7 @@ function App() {
 
   const createUrl = () => {
     const urlObj = new URL(url)
-    const stIdx = (Math.floor((rand + 1) / 50)) * 50
+    const stIdx = (Math.floor((rand) / 50)) * 50 - 1
     // start
     urlObj.search = urlObj.search.split('&').map((param) => {
       if (param.includes('startIndex')) {
@@ -90,7 +90,8 @@ function App() {
   }, [])
 
   const historyList = history.list.map((h) => <Typography sx={{ m: '0.5rem' }} key={h.time}>{h.number}</Typography>)
-  const open = () => window.open(url)
+  // eslint-disable-next-line no-restricted-globals
+  const open = () => location.href = url
 
   const deleteHistory = () => {
     localStorage.clear()
