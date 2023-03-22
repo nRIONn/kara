@@ -53,7 +53,7 @@ function App() {
 
   const createUrl = () => {
     const urlObj = new URL(url)
-    const stIdx = (Math.floor((rand) / 50)) * 50 - 1
+    const stIdx = (Math.floor((rand - 1) / 50)) * 50
     // start
     urlObj.search = urlObj.search.split('&').map((param) => {
       if (param.includes('startIndex')) {
