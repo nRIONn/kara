@@ -1,3 +1,13 @@
+## MEMO
+
+docker-compose run --rm kara sh -c "yarn"
+
+docker-compose up
+
+GIT はグローバル
+
+NODE以降はコンテナ
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
