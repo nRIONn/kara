@@ -1,8 +1,9 @@
 import { Box, Button, Container, List, Stack, TextareaAutosize, TextField, Typography } from '@mui/material';
 import { useEffect, useState } from 'react'
 import Bar from './Bar';
+import RemoveDialog from './RemoveDialog';
 
-const defaultUrl = "https://www.joysound.com/web/karaoke/ranking/age/ranking?age=1995&startIndex=0&search=1990#jp-cmp-main"
+const defaultUrl = "https://www.joysound.com/web/karaoke/ranking/age/ranking?age=1995&startIndex=0"
 
 type History = {
   list: {
@@ -29,6 +30,7 @@ function App() {
   const [isDuplication, setDuplication] = useState(false)
   const [history, setHistory] = useState<History>({ list: [] })
   const [url, setUrl] = useState(defaultUrl)
+  const [openRemoveDialpg, setOpenRemoveDialog] = useState(false)
 
   const createRandom = () => {
     const randamNum = Math.ceil(Math.random() * (max - min + 1)) + min - 1
@@ -94,9 +96,18 @@ function App() {
   const open = () => location.href = url
 
   const deleteHistory = () => {
+    history.list.shift();
+    setHistory({ list: [...history.list] })
+    setOpenRemoveDialog(false)
+  }
+
+  const deleteAllHistory = () => {
     localStorage.clear()
     setHistory({ list: [] })
+    setOpenRemoveDialog(false)
   }
+
+
 
   return (
     <div>
@@ -119,11 +130,15 @@ function App() {
           <TextareaAutosize minRows={5} value={url} onChange={(e) => setUrl(e.target.value)} />
           <Stack direction="row" sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <Typography>履歴：{history.list.length}件</Typography>
-            <Button variant='contained' onClick={deleteHistory}>履歴削除</Button>
+            <Button variant='contained' onClick={() => setOpenRemoveDialog(true)}>履歴削除</Button>
           </Stack>
           <List sx={{ display: 'flex', flexWrap: 'wrap' }}>{historyList}</List>
         </Stack>
       </Container>
+      <RemoveDialog isOpen={openRemoveDialpg}
+        close={() => setOpenRemoveDialog(false)}
+        deleteHistory={deleteHistory}
+        deleteAll={deleteAllHistory} />
     </div >
   );
 }
