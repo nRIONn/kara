@@ -8,6 +8,11 @@ GIT はグローバル
 
 NODE以降はコンテナ
 
+
+DOCKER起動方法忘れたからローカルで起動します（20231207）
+
+デプロイはnpm run build してdocsにbuildされたファイル置いてプッシュ
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
