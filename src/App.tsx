@@ -36,9 +36,8 @@ function App() {
   }
 
   const changeAge = () => {
-    setAge(Math.ceil(Math.random() * (1985 - 2005 + 1)) + 2005 - 1)
+    setAge(Math.ceil(Math.random() * (1984 - 2006 + 1)) + 2006 - 1)
   }
-
   const createUrl = () => {
     const urlObj = new URL(defaultUrl)
     const stIdx = (Math.floor((rand - 1) / 50)) * 50
@@ -61,8 +60,6 @@ function App() {
 
   // 履歴の初期取得
   useEffect(() => setHistory(intializeHistory()), [])
-
-  console.dir(history.list)
 
   const historyList: JSX.Element[] = generateHistoryElements(history)
 

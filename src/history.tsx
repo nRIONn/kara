@@ -33,8 +33,6 @@ export const generateHistoryElements = (history: History) => {
     })
     converetHistoryList.push(tempArray)
 
-    console.log(converetHistoryList)
-
     return converetHistoryList.map(historys => <ListItem key={historys[0].time} sx={{ display: 'block' }}>
         <Typography component="span" sx={{ m: '0.5rem', display: 'inline-block' }}>{historys[0].age}年：</Typography>
         {historys.map(his => <Typography component="span" sx={{ m: '0.5rem', display: 'inline-block' }} key={his.time}>{his.number}</Typography>)}
