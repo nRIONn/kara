@@ -2,7 +2,6 @@ import { Box, Button, Card, CardContent, Container, Stack, Typography } from '@m
 import { useState } from 'react'
 import Bar from './Bar'
 import { useTimer } from 'react-timer-hook'
-import Footer from './Footer'
 const allHiraganas = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん".split("")
 
 /** 
@@ -35,7 +34,6 @@ function Hiragana() {
                     </Stack>
                 </Box>
             </Container>
-            <Footer />
         </div >
     )
 }
