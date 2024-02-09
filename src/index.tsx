@@ -20,7 +20,7 @@ reportWebVitals()
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/kara",
     element: (
       <Karaoke />
     ),
