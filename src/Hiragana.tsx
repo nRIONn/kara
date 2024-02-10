@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardContent, Container, Stack, Typography } from '@mui/material'
+import { Box, Button, Card, CardContent, Container, Stack, TextField, Typography } from '@mui/material'
 import { useState } from 'react'
 import Bar from './Bar'
 import { useTimer } from 'react-timer-hook'
@@ -9,10 +9,7 @@ const allHiraganas = "あいうえおかきくけこさしすせそたちつて�
  * 
  */
 function Hiragana() {
-    const [hiraganas, setHiraganas] = useState<{ hiragana1: string, hiragana2: string }>({ hiragana1: "", hiragana2: "" })
-
-    const [time, setTime] = useState(180)
-
+    const [hiraganas, setHiraganas] = useState<{ hiragana1: string, hiragana2: string }>({ hiragana1: "？", hiragana2: "？" })
     const createHiragana = () => {
         const hiragana1 = allHiraganas[Math.floor(Math.random() * allHiraganas.length)]
         const hiragana2 = allHiraganas[Math.floor(Math.random() * allHiraganas.length)]
@@ -22,44 +19,40 @@ function Hiragana() {
     const before3min = new Date(new Date().getTime() - 30000)
 
     return (
-        <div>
-            <Bar />
-            <Container sx={{ maxWidth: '480px' }}>
-                <MyTimer expiryTimestamp={before3min} time={time} />
-                <Box width={100} height={200} m={10}>
-                    <Stack direction={"row"} mt={10} spacing={4}>
-                        <Button sx={{ width: 80 }} variant="contained" onClick={createHiragana}>生成</Button>
-                        <Typography variant='h3'>{hiraganas.hiragana1}</Typography>
-                        <Typography variant='h3'>{hiraganas.hiragana2}</Typography>
-                    </Stack>
-                </Box>
-            </Container>
-        </div >
+        <Container style={{ display: "grid", justifyContent: "center" }}>
+            <Card style={{ width: "fit-content", padding: "40px", marginBottom: "30px" }}>
+                <MyTimer expiryTimestamp={before3min} />
+            </Card>
+            <Card style={{ padding: "50px", display: "grid", justifyContent: "center" }}>
+                <Stack direction={"row"} spacing={6} style={{ marginBottom: "20px" }}>
+                    <Typography variant='h3'>{hiraganas.hiragana1}</Typography>
+                    <Typography variant='h3'>{hiraganas.hiragana2}</Typography>
+                </Stack>
+                <Button sx={{ width: 150 }} variant="contained" onClick={createHiragana}>生成</Button>
+            </Card>
+        </Container >
     )
 }
 
 
 
-const MyTimer = (props: { expiryTimestamp: Date, time: number }) => {
+const MyTimer = (props: { expiryTimestamp: Date }) => {
     const { expiryTimestamp } = props
 
     const {
-        totalSeconds,
         seconds,
         minutes,
         hours,
         days,
-        isRunning,
         start,
         pause,
-        resume,
         restart,
     } = useTimer({ expiryTimestamp, onExpire: () => console.warn('onExpire called') })
-
+    const [time, setTime] = useState(180)
 
     return (
         <div style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: '100px' }}>
+            <div style={{ fontSize: '80px' }}>
                 <span>{days}</span>:<span>{hours}</span>:<span>{minutes}</span>:<span>{seconds}</span>
             </div>
             <Stack spacing={2} direction={"row"} justifyContent={"center"}>
@@ -67,13 +60,15 @@ const MyTimer = (props: { expiryTimestamp: Date, time: number }) => {
                 <Button variant='contained' onClick={pause}>Pause</Button>
                 {/* <Button variant='contained' onClick={resume}>Resume</Button> */}
                 <Button variant='contained' onClick={() => {
-                    const time = new Date()
-                    time.setSeconds(time.getSeconds() + props.time)
-                    restart(time)
+                    const now = new Date()
+                    now.setSeconds(now.getSeconds() + time)
+                    restart(now)
                 }}>Restart</Button>
             </Stack>
-
-
+            <TextField type='number' value={time}
+                label={"秒"}
+                onChange={(e) => setTime(Number(e.target.value as string))}
+                style={{ marginTop: "20px", width: "300px" }} />
         </div>
     )
 }
