@@ -1,4 +1,8 @@
 ## MEMO
+2024/5/12:Node上なら曲名取れそう
+→ GithubActionsでリソースの更新をかければ。スマホから最新曲名の取得ができる気がする
+・ランキングの集計が二日前or先週っぽいから最新がとれるはず
+・Actionsの実行は昼12時に更新とかでもいいな。。。
 
 docker-compose run --rm kara sh -c "yarn"
 

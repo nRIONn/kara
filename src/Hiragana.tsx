@@ -1,6 +1,5 @@
-import { Box, Button, Card, CardContent, Container, Stack, TextField, Typography } from '@mui/material'
+import { Button, Card, Container, Stack, TextField, Typography } from '@mui/material'
 import { useState } from 'react'
-import Bar from './Bar'
 import { useTimer } from 'react-timer-hook'
 const allHiraganas = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん".split("")
 

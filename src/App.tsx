@@ -1,4 +1,4 @@
-import { Box, Button, Card, Stack } from '@mui/material'
+import { Box, Button, Stack } from '@mui/material'
 import { useState } from 'react'
 import Bar from './Bar'
 import Hiragana from './Hiragana'
@@ -14,6 +14,7 @@ function App() {
       <Bar />
       {route === "カラオケ" && <Karaoke />}
       {route === "平仮名" && <Hiragana />}
+      {/* TODO:BARに載せたい？ */}
       <Box position={"fixed"} bottom={0} mb={10} textAlign={"center"} width={"100%"}>
         <Stack direction={"row"} spacing={4} justifyContent={"center"} >
           <Btn route="カラオケ" />
@@ -24,6 +25,10 @@ function App() {
   )
 }
 
-
+export type SongData = {
+  age: Number
+  rank: Number,
+  name: string
+}
 
 export default App
