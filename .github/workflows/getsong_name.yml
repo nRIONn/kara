@@ -1,0 +1,23 @@
+name: get_song_name
+on:
+  schedule:
+    - cron: "0 12 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install volta
+        run: curl https://get.volta.sh | bash
+        shell: bash
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+          cache-dependency-path: "**/package-lock.json"
+      - name: npm インストール
+        run: npm i
+      - name: 実行
+        run: npx playwright test

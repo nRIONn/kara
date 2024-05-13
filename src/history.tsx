@@ -1,5 +1,13 @@
 import { ListItem, Typography } from "@mui/material"
 
+/**
+ * 曲名を履歴で使う機能
+ * ・Jsonファイルから曲名一覧を取得しておく
+ * 履歴で保存するときに、Numberとageから曲名をとって履歴に入れておく
+ * 表示は重複した時だけ表示すればいい？
+ */
+
+
 // 履歴系の処理が長くなってきたので分割
 export type History = {
     list: HistoryListItem[]
