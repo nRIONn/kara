@@ -1,4 +1,4 @@
-import { Button, Container, Dialog, Stack, Typography, } from "@mui/material";
+import { Button, Container, Dialog, Stack, Typography, } from "@mui/material"
 
 
 type RemoveDialogProps = {
@@ -9,7 +9,7 @@ type RemoveDialogProps = {
 }
 
 export default function RemoveDialog(props: RemoveDialogProps) {
-    const { isOpen, close, deleteHistory, deleteAll } = props;
+    const { isOpen, close, deleteHistory, deleteAll } = props
 
 
     return <Dialog open={isOpen} >
