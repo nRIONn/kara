@@ -1,8 +1,13 @@
+# 手動実行or定期実行でjsonファイルを生成する
+
 name: get_song_name
 on:
   schedule:
     - cron: "0 12 * * *"
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -20,5 +25,17 @@ jobs:
           cache-dependency-path: "**/package-lock.json"
       - name: npm インストール
         run: npm i
+        shell: bash
       - name: 実行
         run: npx playwright test
+        shell: bash
+      - name: Set current datetime as env variable
+        env:
+          TZ: "Asia/Tokyo" # タイムゾーン指定
+        run: echo "CURRENT_DATETIME=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
+      - name: 生成したファイルをコミット
+        run: |
+          git add .
+          git commit -m "song_name update at ${{ env.CURRENT_DATETIME }}"
+          git push
+          shell: bash
