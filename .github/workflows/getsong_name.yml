@@ -23,12 +23,11 @@ jobs:
           node-version: 20
           cache: "npm"
           cache-dependency-path: "**/package-lock.json"
-      - name: npm インストール
-        run: npm i
-        shell: bash
       - name: 実行
-        run: npx playwright test
-        shell: bash
+        run: |
+         npm i
+         npx playwright install
+         npx playwright test
       - name: Set current datetime as env variable
         env:
           TZ: "Asia/Tokyo" # タイムゾーン指定
