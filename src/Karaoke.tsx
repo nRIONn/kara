@@ -1,6 +1,6 @@
 import { Box, Button, Card, Container, List, Stack, TextareaAutosize, TextField, Typography } from '@mui/material'
 import { useEffect, useState } from 'react'
-import { generateHistoryElements, History, intializeHistory, storeHistory } from './history'
+import { generateHistoryElements, getSongName, History, HistoryListItem, intializeHistory, storeHistory } from './history'
 import RemoveDialog from './RemoveDialog'
 const defaultUrl = "https://www.joysound.com/web/karaoke/ranking/age/ranking?age=1995&startIndex=0"
 
@@ -16,22 +16,28 @@ function Karaoke() {
     const [min, setMin] = useState(1)
     const [age, setAge] = useState(1995)
     const [rand, setRand] = useState(0)
-    const [isDuplication, setDuplication] = useState(false)
+    const [duplicationTitle, setDuplication] = useState("")
     const [history, setHistory] = useState<History>({ list: [] })
     const [url, setUrl] = useState(defaultUrl)
     const [openRemoveDialpg, setOpenRemoveDialog] = useState(false)
 
-    const createRandom = () => {
+    const createRandom = async () => {
         const number = Math.ceil(Math.random() * (max - min + 1)) + min - 1
-        const duplictate = history.list.some(li => li.number === number && li.age === age)
+        const title = await getSongName(number, age)
+        const duplictate = history.list.some(li => li.title === title)
 
         // 重複確認して履歴に追加
-        if (!duplictate) setHistory({ list: [{ number: number, time: new Date().getTime(), age }, ...history.list] })
+        if (!duplictate) {
+            const newHistory = { number: number, time: new Date().getTime(), age, title }
+            setHistory({ list: [...history.list, newHistory] })
+            setDuplication("")
+        } else {
+            // 重複表示
+            setDuplication(title)
+        }
 
         setRand(number)
 
-        // 重複表示
-        setDuplication(duplictate)
     }
 
     const changeAge = () => {
@@ -82,7 +88,8 @@ function Karaoke() {
                         <Stack spacing={3} direction="row" justifyContent="center">
                             <Box alignSelf="center" width="200px">
                                 <Typography variant="h2" sx={{ textAlign: 'center' }}>{rand}</Typography>
-                                {isDuplication && <Typography color="error">※重複</Typography>}
+                                {duplicationTitle && <Typography color="error" >※重複</Typography>}
+                                {duplicationTitle && <Typography color="error" sx={{ fontSize: 12 }}>{duplicationTitle}</Typography>}
                             </Box>
                             <Stack spacing={2} justifyContent="center">
                                 <TextField label="最大値" value={max} type="number" onChange={(e) => setMax(Number(e.target.value))} />
