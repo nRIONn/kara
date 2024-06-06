@@ -46,5 +46,5 @@ const testFunction = async (page: Page, age: Number) => {
   // 497までしかなかったりするから451↑で判定
   await expect(songNameData.length).toBeGreaterThan(451)
   // ファイルは年代ごとに保存する
-  await writeFile(`src/song_data/${age}.json`, songNameData)
+  await writeFile(`public/song_data/${age}.json`, songNameData)
 }
