@@ -46,7 +46,7 @@ export const generateHistoryElements = (history: History) => {
 
     return converetHistoryList.reverse().map(historys => <ListItem key={historys[0].time} sx={{ display: 'block' }}>
         <Typography component="span" sx={{ m: '0.5rem', display: 'block', fontWeight: 'bold' }}>{historys[0].age}年</Typography>
-        {historys.reverse().map(his => <Typography component="span" sx={{ m: '0.5rem', display: 'inline-block' }} key={his.time}>{his.number}-{his.title}</Typography>)}
+        {historys.reverse().map(his => <Typography component="span" sx={{ m: '0.5rem', display: 'block' }} key={his.time}>{his.number}-{his.title}</Typography>)}
     </ListItem>)
 }
 
