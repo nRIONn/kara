@@ -28,6 +28,7 @@ jobs:
          npm i
          npx playwright install
          npx playwright test
+        shell: bash
       - name: Set current datetime as env variable
         env:
           TZ: "Asia/Tokyo" # タイムゾーン指定
@@ -39,4 +40,4 @@ jobs:
           git add .
           git commit -m "song_name update at ${{ env.CURRENT_DATETIME }}"
           git push
-          shell: bash
+        shell: bash
