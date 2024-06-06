@@ -1,23 +1,15 @@
-# 手動実行or定期実行でjsonファイルを生成する
-
-name: get_song_name
+name: Playwright Tests
 on:
-  schedule:
-    - cron: "0 12 * * *"
-  workflow_dispatch:
-
-permissions:
-  contents: write
-
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
 jobs:
-  build:
+  test:
+    timeout-minutes: 60
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
-      - name: Install volta
-        run: curl https://get.volta.sh | bash
-        shell: bash
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -25,9 +17,9 @@ jobs:
           cache-dependency-path: "**/package-lock.json"
       - name: 実行
         run: |
-         npm ci
-         npx playwright install --with-deps
-         npx playwright test
+          npm ci
+          npx playwright install --with-deps
+          npx playwright test
         shell: bash
       - name: Set current datetime as env variable
         env:
