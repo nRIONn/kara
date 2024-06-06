@@ -26,7 +26,7 @@ jobs:
       - name: 実行
         run: |
          npm i
-         npx playwright install
+         npx playwright install --with-deps
          npx playwright test
         shell: bash
       - name: Set current datetime as env variable
