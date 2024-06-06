@@ -13,8 +13,9 @@ export type History = {
     list: HistoryListItem[]
 }
 
-type HistoryListItem = {
+export type HistoryListItem = {
     number?: number,
+    title: string,
     time: number,
     age: number
 }
@@ -23,7 +24,7 @@ type HistoryListItem = {
 const day = 86400000
 
 export const generateHistoryElements = (history: History) => {
-    if (!history.list.length) return []
+    if (history.list.length < 2) return []
 
     // 一次配列
     const tempArray: HistoryListItem[] = []
@@ -39,12 +40,30 @@ export const generateHistoryElements = (history: History) => {
         }
         tempArray.push(a)
     })
-    converetHistoryList.push(tempArray)
 
-    return converetHistoryList.map(historys => <ListItem key={historys[0].time} sx={{ display: 'block' }}>
-        <Typography component="span" sx={{ m: '0.5rem', display: 'inline-block' }}>{historys[0].age}年：</Typography>
-        {historys.map(his => <Typography component="span" sx={{ m: '0.5rem', display: 'inline-block' }} key={his.time}>{his.number}</Typography>)}
+    converetHistoryList.push(tempArray)
+    converetHistoryList[0].pop()
+
+    return converetHistoryList.reverse().map(historys => <ListItem key={historys[0].time} sx={{ display: 'block' }}>
+        <Typography component="span" sx={{ m: '0.5rem', display: 'block', fontWeight: 'bold' }}>{historys[0].age}年</Typography>
+        {historys.reverse().map(his => <Typography component="span" sx={{ m: '0.5rem', display: 'inline-block' }} key={his.time}>{his.number}-{his.title}</Typography>)}
     </ListItem>)
+}
+
+export const getSongName = async (rank: number, age: number): Promise<string> => {
+    // Jsonを開く song_data/{data.age}.json
+    const res = await fetch(`${process.env.PUBLIC_URL}/song_data/${age}.json`)
+    // const res = await fetch(`song_data/${data.age}.json`)
+    type SongData = { age: string, name: string, rank: number }
+    // ex) [{ "age": 1988, "name": "晩餐歌/tuki.", "rank": 2 }]
+    const songDataList: SongData[] = await res.json()
+    const song = songDataList.find((s) => s.rank === rank)
+
+    if (!song) {
+        console.error("song is not found.")
+        throw new Error()
+    }
+    return song?.name
 }
 
 export const storeHistory = (history: History) => {

@@ -29,7 +29,12 @@ const testFunction = async (page: Page, age: Number) => {
   for (const startIndex of startIndexList) {
     const url = `https://www.joysound.com/web/karaoke/ranking/age/ranking?age=${age}&startIndex=${startIndex}`
     await page.goto(url)
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    // これで0番目が生成されるまでauto-waitされる
+    await page
+      .locator(".jp-cmp-table-column-pt-001 .jp-cmp-ranking-title")
+      .nth(0)
+      .innerText()
+    // 逆にAll系はauto-waitされないらしい
     const elements = await page
       .locator(".jp-cmp-table-column-pt-001 .jp-cmp-ranking-title")
       .allInnerTexts()
@@ -41,5 +46,5 @@ const testFunction = async (page: Page, age: Number) => {
   // 497までしかなかったりするから451↑で判定
   await expect(songNameData.length).toBeGreaterThan(451)
   // ファイルは年代ごとに保存する
-  await writeFile(`src/song_data/${age}.json`, songNameData)
+  await writeFile(`public/song_data/${age}.json`, songNameData)
 }
