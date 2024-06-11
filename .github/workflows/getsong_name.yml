@@ -40,6 +40,7 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git diff
           git add .
-          git commit -m "song_name update at ${{ env.CURRENT_DATETIME }}"
-          git push
+          # git commit -m "song_name update at ${{ env.CURRENT_DATETIME }}"
+          # git push
+          　
         shell: bash
