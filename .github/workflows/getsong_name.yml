@@ -40,5 +40,6 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add .
           git commit -m "song_name update at ${{ env.CURRENT_DATETIME }}"
+          npm run deploy
           git push
         shell: bash
