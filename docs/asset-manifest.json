@@ -8,8 +8,5 @@
     "main.be854a7d.js.map": "/kara/static/js/main.be854a7d.js.map",
     "787.b150b4e2.chunk.js.map": "/kara/static/js/787.b150b4e2.chunk.js.map"
   },
-  "entrypoints": [
-    "static/css/main.3c0d9517.css",
-    "static/js/main.be854a7d.js"
-  ]
+  "entrypoints": ["static/css/main.3c0d9517.css", "static/js/main.be854a7d.js"]
 }
