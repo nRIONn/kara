@@ -31,6 +31,7 @@ jobs:
           npm ci
           npx playwright install --with-deps
           npx playwright test
+          npx prettier . -w
         shell: bash
       - name: Set current datetime as env variable
         env:
@@ -42,8 +43,7 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git diff
           git add .
-          git commit -m "song_name update at ${{ env.CURRENT_DATETIME }}"
-          npm run deploy
+          git commit -m "song_name update at ${{ env.CURRENT_DATETIME }}" --allow-empty
           git push
           　
         shell: bash
