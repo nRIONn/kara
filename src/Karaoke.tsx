@@ -69,22 +69,26 @@ function Karaoke() {
     setAge(Math.ceil(Math.random() * (1984 - 2006 + 1)) + 2006 - 1)
   }
   const createUrl = () => {
-    const urlObj = new URL(defaultUrl)
-    const stIdx = Math.floor((rand - 1) / 50) * 50
-    // start
-    urlObj.search = urlObj.search
-      .split("&")
-      .map((param) => {
-        if (param.includes("startIndex")) {
-          return `startIndex=${stIdx}`
-        } else if (param.includes("age")) {
-          return `age=${age}`
-        } else {
-          return param
-        }
-      })
-      .join("&")
-    setUrl(urlObj.href)
+    try {
+      const urlObj = new URL(defaultUrl)
+      const stIdx = Math.floor((rand - 1) / 50) * 50
+      // start
+      urlObj.search = urlObj.search
+        .split("&")
+        .map((param) => {
+          if (param.includes("startIndex")) {
+            return `startIndex=${stIdx}`
+          } else if (param.includes("age")) {
+            return `age=${age}`
+          } else {
+            return param
+          }
+        })
+        .join("&")
+      setUrl(urlObj.href)
+    } catch (e) {
+      console.error(e)
+    }
   }
 
   useEffect(createUrl, [rand, age])
