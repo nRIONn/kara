@@ -27,7 +27,7 @@
     "local": "react-scripts start",
     "build": "react-scripts build",
     "deploy": "react-scripts build && cpx -C build/** docs && git add . && git commit -m 'deploy' && git push",
-    "test": "react-scripts test",
+    "test": "playwright test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
