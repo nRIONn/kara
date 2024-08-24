@@ -44,5 +44,5 @@ jobs:
           git diff
           git add .
           git commit -m "song_name update at ${{ env.CURRENT_DATETIME }}" --allow-empty
-          git push
+          npm run deploy
         shell: bash
