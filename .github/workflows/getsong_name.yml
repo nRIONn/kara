@@ -42,7 +42,8 @@ jobs:
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git diff
+          npm run build
           git add .
           git commit -m "song_name update at ${{ env.CURRENT_DATETIME }}" --allow-empty
-          npm run deploy
+          git push
         shell: bash
