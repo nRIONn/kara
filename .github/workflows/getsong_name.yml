@@ -35,6 +35,7 @@ jobs:
         shell: bash
       - name: デプロイ
         run: |
+          npm ci
           npx prettier . -w
           npm run build
           cpx -C build/** docs
