@@ -6,8 +6,5 @@
     "main.3c0d9517.css.map": "/kara/static/css/main.3c0d9517.css.map",
     "main.c88bed2e.js.map": "/kara/static/js/main.c88bed2e.js.map"
   },
-  "entrypoints": [
-    "static/css/main.3c0d9517.css",
-    "static/js/main.c88bed2e.js"
-  ]
+  "entrypoints": ["static/css/main.3c0d9517.css", "static/js/main.c88bed2e.js"]
 }
