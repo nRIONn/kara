@@ -32,14 +32,18 @@ jobs:
           npx playwright install --with-deps
           npx update-browserslist-db@latest
           npx playwright test
+        shell: bash
+      - name: デプロイ
+        run: |
           npx prettier . -w
+          npm run build
+          cpx -C build/** docs
         shell: bash
       - name: Set current datetime as env variable
         env:
           TZ: "Asia/Tokyo" # タイムゾーン指定
         run: echo "CURRENT_DATETIME=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
       - name: 生成したファイルをコミット
-        # npm run build
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
