@@ -26,7 +26,7 @@
     "start": "WATCHPACK_POLLING=true react-scripts start",
     "local": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "npm run build &&  && cpx -C build/** docs && git add . && git commit -m 'deploy' && git push",
+    "deploy": "npm run build &&  && cpx build/** docs/ && git add . && git commit -m 'deploy' && git push",
     "test": "playwright test",
     "eject": "react-scripts eject"
   },

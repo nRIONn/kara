@@ -38,7 +38,7 @@ jobs:
           npm ci
           npx prettier . -w
           npm run build
-          cpx -C build/** docs
+          npx cpx build/** docs/
         shell: bash
       - name: Set current datetime as env variable
         env:
