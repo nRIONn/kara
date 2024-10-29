@@ -738,7 +738,11 @@
   { "age": 1999, "name": "Tame-Lie-One-Step/初星学園", "rank": 493 },
   { "age": 1999, "name": "インザバックルーム/syudou", "rank": 494 },
   { "age": 1999, "name": "冬と春/back number", "rank": 495 },
-  { "age": 1999, "name": "カリスマジャンボリー/七人のカリスマ", "rank": 496 },
+  {
+    "age": 1999,
+    "name": "カリスマジャンボリー《本人映像》/七人のカリスマ",
+    "rank": 496
+  },
   { "age": 1999, "name": "瞳をとじて/平井堅", "rank": 497 },
   { "age": 1999, "name": "HOLLOW HUNGER/OxT", "rank": 498 },
   { "age": 1999, "name": "トリノコシティ/40mP feat.初音ミク", "rank": 499 },
