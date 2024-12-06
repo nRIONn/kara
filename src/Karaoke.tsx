@@ -194,7 +194,7 @@ function Karaoke() {
                 </Button>
               }
             </Stack>
-            <HistoryList history={history} isRemove={false} />
+            <HistoryList history={history} isRemove={remove} setHistory={(h) => setHistory(h)} />
             <Typography>URL</Typography>
             <TextareaAutosize
               minRows={3}
