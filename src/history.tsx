@@ -1,4 +1,4 @@
-import { ListItem, Typography } from "@mui/material";
+import { List, ListItem, Typography } from "@mui/material"
 
 /**
  * 曲名を履歴で使う機能
@@ -9,41 +9,42 @@ import { ListItem, Typography } from "@mui/material";
 
 // 履歴系の処理が長くなってきたので分割
 export type History = {
-  list: HistoryListItem[];
-};
+  list: HistoryListItem[]
+}
 
 export type HistoryListItem = {
-  number?: number;
-  title: string;
-  time: number;
-  age: number;
-};
+  number?: number
+  title: string
+  time: number
+  age: number
+}
 
 // ミリ秒
-const day = 86400000;
+const day = 86400000
 
-export const generateHistoryElements = (history: History) => {
-  if (history.list.length < 2) return [];
+export const HistoryList = (props: { history: History, isRemove: boolean }) => {
+  const { history, isRemove } = props
+  if (history.list.length < 2) return <List sx={{ display: "flex", flexWrap: "wrap" }}></List>
 
   // 一次配列
-  const tempArray: HistoryListItem[] = [];
+  const tempArray: HistoryListItem[] = []
   // 二次元配列
-  const converetHistoryList: HistoryListItem[][] = [];
+  const converetHistoryList: HistoryListItem[][] = []
   history.list.forEach((a) => {
     if (tempArray.length && a.age !== tempArray[0].age) {
       // 年が変わってる
       // tempArrayを二次元配列の一部にする
-      converetHistoryList.push([...tempArray]);
+      converetHistoryList.push([...tempArray])
       // tempArrayの初期化
-      tempArray.splice(0);
+      tempArray.splice(0)
     }
-    tempArray.push(a);
-  });
+    tempArray.push(a)
+  })
 
-  converetHistoryList.push(tempArray);
-  converetHistoryList[0].pop();
+  converetHistoryList.push(tempArray)
+  converetHistoryList[0].pop()
 
-  return converetHistoryList.reverse().map((historys) => (
+  const historyListElement = converetHistoryList.reverse().map((historys) => (
     <ListItem key={historys[0].time} sx={{ display: "block" }}>
       <Typography
         component="span"
@@ -60,37 +61,42 @@ export const generateHistoryElements = (history: History) => {
           {his.number}-{his.title}
         </Typography>
       ))}
-    </ListItem>
-  ));
-};
+    </ListItem>))
+
+  return (
+    <List sx={{ display: "flex", flexWrap: "wrap" }}>
+      {historyListElement}
+    </List>
+  )
+}
 
 export const getSongName = async (
   rank: number,
   age: number,
 ): Promise<string> => {
   // Jsonを開く song_data/{data.age}.json
-  const res = await fetch(`${process.env.PUBLIC_URL}/song_data/${age}.json`);
+  const res = await fetch(`${process.env.PUBLIC_URL}/song_data/${age}.json`)
   // const res = await fetch(`song_data/${data.age}.json`)
-  type SongData = { age: string; name: string; rank: number };
+  type SongData = { age: string; name: string; rank: number }
   // ex) [{ "age": 1988, "name": "晩餐歌/tuki.", "rank": 2 }]
-  const songDataList: SongData[] = await res.json();
-  const song = songDataList.find((s) => s.rank === rank);
+  const songDataList: SongData[] = await res.json()
+  const song = songDataList.find((s) => s.rank === rank)
 
   if (!song) {
-    console.error("song is not found.");
-    throw new Error();
+    console.error("song is not found.")
+    throw new Error()
   }
-  return song?.name;
-};
+  return song?.name
+}
 
 export const storeHistory = (history: History) => {
   if (history.list.length) {
-    localStorage.setItem("karaHistory", JSON.stringify(history));
+    localStorage.setItem("karaHistory", JSON.stringify(history))
   }
-};
+}
 
 export const intializeHistory = () => {
-  const historyJson = localStorage.getItem("karaHistory");
+  const historyJson = localStorage.getItem("karaHistory")
   try {
     if (historyJson) {
       // 24時間経過してるやつを捨てる
@@ -98,12 +104,12 @@ export const intializeHistory = () => {
         list: (JSON.parse(historyJson) as History).list.filter(
           (his) => new Date().getTime() - his.time < day,
         ),
-      };
-      return history;
+      }
+      return history
     }
-    return { list: [] };
+    return { list: [] }
   } catch {
-    console.error("json parse error");
-    throw new Error("json parse error");
+    console.error("json parse error")
+    throw new Error("json parse error")
   }
-};
+}

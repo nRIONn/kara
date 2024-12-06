@@ -3,7 +3,6 @@ import {
   Button,
   Card,
   Container,
-  List,
   Stack,
   TextareaAutosize,
   TextField,
@@ -11,13 +10,12 @@ import {
 } from "@mui/material"
 import { useEffect, useState } from "react"
 import {
-  generateHistoryElements,
   getSongName,
   History,
+  HistoryList,
   intializeHistory,
   storeHistory,
 } from "./history"
-import RemoveDialog from "./RemoveDialog"
 const defaultUrl =
   "https://www.joysound.com/web/karaoke/ranking/age/ranking?age=1995&startIndex=0"
 
@@ -46,7 +44,7 @@ function Karaoke() {
   const [duplicationTitle, setDuplication] = useState("")
   const [history, setHistory] = useState<History>({ list: [] })
   const [url, setUrl] = useState(defaultUrl)
-  const [openRemoveDialpg, setOpenRemoveDialog] = useState(false)
+  const [remove, setRemove] = useState(false)
 
   const createRandom = async () => {
     try {
@@ -107,18 +105,10 @@ function Karaoke() {
   // 履歴の初期取得
   useEffect(() => setHistory(intializeHistory()), [])
 
-  const historyList: JSX.Element[] = generateHistoryElements(history)
-
-  const deleteHistory = () => {
-    history.list.shift()
-    setHistory({ list: [...history.list] })
-    setOpenRemoveDialog(false)
-  }
-
   const deleteAllHistory = () => {
     localStorage.clear()
     setHistory({ list: [] })
-    setOpenRemoveDialog(false)
+    setRemove(false)
   }
 
   return (
@@ -187,16 +177,24 @@ function Karaoke() {
               }}
             >
               <Typography>履歴：{history.list.length}件</Typography>
-              <Button
-                variant="contained"
-                onClick={() => setOpenRemoveDialog(true)}
-              >
-                履歴削除
-              </Button>
+              {remove ?
+                <Stack direction={"row"} spacing={2}>
+                  <Button variant="contained" color="error" onClick={deleteAllHistory}>
+                    全部
+                  </Button>
+                  <Button variant="outlined" color="secondary" onClick={() => setRemove(false)}>
+                    キャンセル
+                  </Button>
+                </Stack> :
+                <Button
+                  variant="contained"
+                  onClick={() => setRemove(true)}
+                >
+                  履歴削除
+                </Button>
+              }
             </Stack>
-            <List sx={{ display: "flex", flexWrap: "wrap" }}>
-              {historyList}
-            </List>
+            <HistoryList history={history} isRemove={false} />
             <Typography>URL</Typography>
             <TextareaAutosize
               minRows={3}
@@ -206,12 +204,6 @@ function Karaoke() {
           </Stack>
         </Card>
       </Container>
-      <RemoveDialog
-        isOpen={openRemoveDialpg}
-        close={() => setOpenRemoveDialog(false)}
-        deleteHistory={deleteHistory}
-        deleteAll={deleteAllHistory}
-      />
     </div>
   )
 }
