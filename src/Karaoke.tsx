@@ -3,23 +3,22 @@ import {
   Button,
   Card,
   Container,
-  List,
   Stack,
   TextareaAutosize,
   TextField,
   Typography,
-} from "@mui/material";
-import { useEffect, useState } from "react";
+} from "@mui/material"
+import { useEffect, useState } from "react"
 import {
-  generateHistoryElements,
   getSongName,
   History,
+  HistoryList,
   intializeHistory,
   storeHistory,
-} from "./history";
-import RemoveDialog from "./RemoveDialog";
+} from "./history"
 const defaultUrl =
-  "https://www.joysound.com/web/karaoke/ranking/age/ranking?age=1995&startIndex=0";
+  "https://www.joysound.com/web/karaoke/ranking/age/ranking?age=1995&startIndex=0"
+
 
 /**
  * 機能
@@ -29,20 +28,20 @@ const defaultUrl =
  * ・年代±10機能
  */
 function Karaoke() {
-  const [max, setMax] = useState(500);
-  const [min, setMin] = useState(1);
-  const [age, setAge] = useState(1995);
-  const [rand, setRand] = useState(0);
-  const [duplicationTitle, setDuplication] = useState("");
-  const [history, setHistory] = useState<History>({ list: [] });
-  const [url, setUrl] = useState(defaultUrl);
-  const [openRemoveDialpg, setOpenRemoveDialog] = useState(false);
+  const [max, setMax] = useState(500)
+  const [min, setMin] = useState(1)
+  const [age, setAge] = useState(1995)
+  const [rand, setRand] = useState(0)
+  const [duplicationTitle, setDuplication] = useState("")
+  const [history, setHistory] = useState<History>({ list: [] })
+  const [url, setUrl] = useState(defaultUrl)
+  const [remove, setRemove] = useState(false)
 
   const createRandom = async () => {
     try {
-      const number = Math.ceil(Math.random() * (max - min + 1)) + min - 1;
-      const title = await getSongName(number, age);
-      const duplictate = history.list.some((li) => li.title === title);
+      const number = Math.ceil(Math.random() * (max - min + 1)) + min - 1
+      const title = await getSongName(number, age)
+      const duplictate = history.list.some((li) => li.title === title)
 
       // 重複確認して履歴に追加
       if (!duplictate) {
@@ -51,65 +50,57 @@ function Karaoke() {
           time: new Date().getTime(),
           age,
           title,
-        };
-        setHistory({ list: [...history.list, newHistory] });
-        setDuplication("");
+        }
+        setHistory({ list: [...history.list, newHistory] })
+        setDuplication("")
       } else {
         // 重複表示
-        setDuplication(title);
+        setDuplication(title)
       }
 
-      setRand(number);
+      setRand(number)
     } catch (e) {
-      console.error(e);
+      console.error(e)
     }
-  };
+  }
 
   const changeAge = () => {
-    setAge(Math.ceil(Math.random() * (1984 - 2006 + 1)) + 2006 - 1);
-  };
+    setAge(Math.ceil(Math.random() * (1984 - 2006 + 1)) + 2006 - 1)
+  }
   const createUrl = () => {
     try {
-      const urlObj = new URL(defaultUrl);
-      const stIdx = Math.floor((rand - 1) / 50) * 50;
+      const urlObj = new URL(defaultUrl)
+      const stIdx = Math.floor((rand - 1) / 50) * 50
       // start
       urlObj.search = urlObj.search
         .split("&")
         .map((param) => {
           if (param.includes("startIndex")) {
-            return `startIndex=${stIdx}`;
+            return `startIndex=${stIdx}`
           } else if (param.includes("age")) {
-            return `age=${age}`;
+            return `age=${age}`
           } else {
-            return param;
+            return param
           }
         })
-        .join("&");
-      setUrl(urlObj.href);
+        .join("&")
+      setUrl(urlObj.href)
     } catch (e) {
-      console.error(e);
+      console.error(e)
     }
-  };
+  }
 
-  useEffect(createUrl, [rand, age]);
-  useEffect(() => storeHistory(history), [history]);
+  useEffect(createUrl, [rand, age])
+  useEffect(() => storeHistory(history), [history])
 
   // 履歴の初期取得
-  useEffect(() => setHistory(intializeHistory()), []);
-
-  const historyList: JSX.Element[] = generateHistoryElements(history);
-
-  const deleteHistory = () => {
-    history.list.shift();
-    setHistory({ list: [...history.list] });
-    setOpenRemoveDialog(false);
-  };
+  useEffect(() => setHistory(intializeHistory()), [])
 
   const deleteAllHistory = () => {
-    localStorage.clear();
-    setHistory({ list: [] });
-    setOpenRemoveDialog(false);
-  };
+    localStorage.clear()
+    setHistory({ list: [] })
+    setRemove(false)
+  }
 
   return (
     <div>
@@ -168,42 +159,45 @@ function Karaoke() {
                 開く
               </Button>
             </a>
+            <Stack
+              direction="row"
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <Typography>履歴：{history.list.length}件</Typography>
+              {remove ?
+                <Stack direction={"row"} spacing={2}>
+                  <Button variant="contained" color="error" onClick={deleteAllHistory}>
+                    全部
+                  </Button>
+                  <Button variant="outlined" color="secondary" onClick={() => setRemove(false)}>
+                    キャンセル
+                  </Button>
+                </Stack> :
+                <Button
+                  variant="contained"
+                  onClick={() => setRemove(true)}
+                >
+                  履歴削除
+                </Button>
+              }
+            </Stack>
+            <HistoryList history={history} isRemove={remove} setHistory={(h) => setHistory(h)} />
             <Typography>URL</Typography>
             <TextareaAutosize
               minRows={3}
               value={url}
               onChange={(e) => setUrl(e.target.value)}
             />
-            <Stack
-              direction="row"
-              sx={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-            >
-              <Typography>履歴：{history.list.length}件</Typography>
-              <Button
-                variant="contained"
-                onClick={() => setOpenRemoveDialog(true)}
-              >
-                履歴削除
-              </Button>
-            </Stack>
-            <List sx={{ display: "flex", flexWrap: "wrap" }}>
-              {historyList}
-            </List>
           </Stack>
         </Card>
       </Container>
-      <RemoveDialog
-        isOpen={openRemoveDialpg}
-        close={() => setOpenRemoveDialog(false)}
-        deleteHistory={deleteHistory}
-        deleteAll={deleteAllHistory}
-      />
-    </div>
-  );
+    </div >
+  )
 }
 
-export default Karaoke;
+export default Karaoke
