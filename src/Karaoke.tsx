@@ -21,15 +21,6 @@ const defaultUrl =
 
 
 /**
- * 開発内容メモ
- * 履歴削除ボタンの挙動をかえる
- * 押されたら、全削除ボタンが左隣に出現。履歴削除ボタンは「キャンセル」に置き換わる
- * 履歴削除モードにして曲名タップで削除確認モーダルを出す
- * どの曲を消すべきかをユーザーに選択させる方向性
- */
-
-
-/**
  * 機能
  * ・乱数が振れる
  * ・リンクを出す
@@ -172,6 +163,7 @@ function Karaoke() {
               direction="row"
               sx={{
                 display: "flex",
+                flexWrap: "wrap",
                 justifyContent: "space-between",
                 alignItems: "center",
               }}
@@ -204,7 +196,7 @@ function Karaoke() {
           </Stack>
         </Card>
       </Container>
-    </div>
+    </div >
   )
 }
 

@@ -1,4 +1,6 @@
 import { List, ListItem, Stack, Typography } from "@mui/material"
+import { useState } from "react"
+import { ConfirmDialog } from "./ConfirmDialog"
 
 /**
  * 曲名を履歴で使う機能
@@ -24,7 +26,9 @@ const day = 86400000
 
 export const HistoryList = (props: { history: History, isRemove: boolean, setHistory: (history: History) => void }) => {
   const { history, isRemove, setHistory } = props
-  if (history.list.length < 2) return <List sx={{ display: "flex", flexWrap: "wrap" }}></List>
+  const [songName, setSongName] = useState("")
+
+  if (history.list.length < 1) return <List sx={{ display: "flex", flexWrap: "wrap" }}></List>
 
   // 一次配列
   const tempArray: HistoryListItem[] = []
@@ -42,13 +46,12 @@ export const HistoryList = (props: { history: History, isRemove: boolean, setHis
   })
 
   // 選択されたタイトルを消す
-  const deleteHistory = (title: string) =>
+  const deleteHistory = (title: string) => {
     setHistory({ list: history.list.filter((his) => his.title !== title) })
-
-  converetHistoryList.push(tempArray)
-  if (!isRemove) {
-    converetHistoryList[0].pop()
+    setSongName("")
   }
+  converetHistoryList.push(tempArray)
+
   const historyListElement = converetHistoryList.reverse().map((historys) => (
     <ListItem key={historys[0].time} sx={{ display: "block", p: 0 }}>
       <Typography
@@ -59,7 +62,7 @@ export const HistoryList = (props: { history: History, isRemove: boolean, setHis
       </Typography>
       {
         historys.reverse().map((his) => (
-          <Stack direction={"row"} style={{ alignItems: "center", justifyContent: "space-between" }}>
+          <Stack direction={"row"} style={{ alignItems: "center", justifyContent: "space-between" }} key={his.title}>
             <Typography
               component="span"
               sx={{ mb: 1, display: "block" }}
@@ -67,7 +70,7 @@ export const HistoryList = (props: { history: History, isRemove: boolean, setHis
             >
               {his.number}-{his.title}
             </Typography>
-            {isRemove && <button style={{ background: "none", border: "none" }} onClick={() => deleteHistory(his.title)}><TrashSVG /></button>}
+            {isRemove && <button style={{ background: "none", border: "none" }} onClick={() => setSongName(his.title)}><TrashSVG /></button>}
           </Stack>
         ))
       }
@@ -76,6 +79,13 @@ export const HistoryList = (props: { history: History, isRemove: boolean, setHis
   return (
     <List sx={{ display: "flex", flexWrap: "wrap" }}>
       {historyListElement}
+      <ConfirmDialog
+        key={"dialog"}
+        open={songName !== ""}
+        title={songName}
+        handleClick={() => deleteHistory(songName)}
+        handleCancel={() => setSongName("")}
+      />
     </List>
   )
 }
@@ -86,7 +96,6 @@ export const getSongName = async (
 ): Promise<string> => {
   // Jsonを開く song_data/{data.age}.json
   const res = await fetch(`${process.env.PUBLIC_URL}/song_data/${age}.json`)
-  // const res = await fetch(`song_data/${data.age}.json`)
   type SongData = { age: string; name: string; rank: number }
   // ex) [{ "age": 1988, "name": "晩餐歌/tuki.", "rank": 2 }]
   const songDataList: SongData[] = await res.json()
