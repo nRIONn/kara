@@ -5,13 +5,13 @@ import {
   Stack,
   TextField,
   Typography,
-} from "@mui/material"
-import { useState } from "react"
-import { useTimer } from "react-timer-hook"
+} from "@mui/material";
+import { useState } from "react";
+import { useTimer } from "react-timer-hook";
 const allHiraganas =
   "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん".split(
     "",
-  )
+  );
 
 /**
  * 機能
@@ -19,18 +19,18 @@ const allHiraganas =
  */
 function Hiragana() {
   const [hiraganas, setHiraganas] = useState<{
-    hiragana1: string
-    hiragana2: string
-  }>({ hiragana1: "？", hiragana2: "？" })
+    hiragana1: string;
+    hiragana2: string;
+  }>({ hiragana1: "？", hiragana2: "？" });
   const createHiragana = () => {
     const hiragana1 =
-      allHiraganas[Math.floor(Math.random() * allHiraganas.length)]
+      allHiraganas[Math.floor(Math.random() * allHiraganas.length)];
     const hiragana2 =
-      allHiraganas[Math.floor(Math.random() * allHiraganas.length)]
-    setHiraganas({ hiragana1, hiragana2 })
-  }
+      allHiraganas[Math.floor(Math.random() * allHiraganas.length)];
+    setHiraganas({ hiragana1, hiragana2 });
+  };
 
-  const before3min = new Date(new Date().getTime() - 30000)
+  const before3min = new Date(new Date().getTime() - 30000);
 
   return (
     <Container style={{ display: "grid", justifyContent: "center" }}>
@@ -55,17 +55,17 @@ function Hiragana() {
         </Button>
       </Card>
     </Container>
-  )
+  );
 }
 
 const MyTimer = (props: { expiryTimestamp: Date }) => {
-  const { expiryTimestamp } = props
+  const { expiryTimestamp } = props;
 
   const { seconds, minutes, hours, days, start, pause, restart } = useTimer({
     expiryTimestamp,
     onExpire: () => console.warn("onExpire called"),
-  })
-  const [time, setTime] = useState(180)
+  });
+  const [time, setTime] = useState(180);
 
   return (
     <div style={{ textAlign: "center" }}>
@@ -84,9 +84,9 @@ const MyTimer = (props: { expiryTimestamp: Date }) => {
         <Button
           variant="contained"
           onClick={() => {
-            const now = new Date()
-            now.setSeconds(now.getSeconds() + time)
-            restart(now)
+            const now = new Date();
+            now.setSeconds(now.getSeconds() + time);
+            restart(now);
           }}
         >
           Restart
@@ -100,7 +100,7 @@ const MyTimer = (props: { expiryTimestamp: Date }) => {
         style={{ marginTop: "20px", width: "300px" }}
       />
     </div>
-  )
-}
+  );
+};
 
-export default Hiragana
+export default Hiragana;
