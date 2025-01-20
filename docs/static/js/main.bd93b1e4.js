@@ -22168,41 +22168,37 @@
             }),
             n.push(t),
             n[0].pop(),
-            n
-              .reverse()
-              .map((e) =>
-                (0, ze.jsxs)(
-                  Mi,
-                  {
-                    sx: { display: "block" },
-                    children: [
-                      (0, ze.jsxs)(hn, {
-                        component: "span",
-                        sx: {
-                          m: "0.5rem",
-                          display: "block",
-                          fontWeight: "bold",
+            n.reverse().map((e) =>
+              (0, ze.jsxs)(
+                Mi,
+                {
+                  sx: { display: "block" },
+                  children: [
+                    (0, ze.jsxs)(hn, {
+                      component: "span",
+                      sx: {
+                        m: "0.5rem",
+                        display: "block",
+                        fontWeight: "bold",
+                      },
+                      children: [e[0].age, "\u5e74"],
+                    }),
+                    e.reverse().map((e) =>
+                      (0, ze.jsxs)(
+                        hn,
+                        {
+                          component: "span",
+                          sx: { m: "0.5rem", display: "block" },
+                          children: [e.number, "-", e.title],
                         },
-                        children: [e[0].age, "\u5e74"],
-                      }),
-                      e
-                        .reverse()
-                        .map((e) =>
-                          (0, ze.jsxs)(
-                            hn,
-                            {
-                              component: "span",
-                              sx: { m: "0.5rem", display: "block" },
-                              children: [e.number, "-", e.title],
-                            },
-                            e.time,
-                          ),
-                        ),
-                    ],
-                  },
-                  e[0].time,
-                ),
-              )
+                        e.time,
+                      ),
+                    ),
+                  ],
+                },
+                e[0].time,
+              ),
+            )
           );
         })(d);
         return (0, ze.jsxs)("div", {
