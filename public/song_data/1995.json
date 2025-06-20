@@ -206,11 +206,7 @@
   { "age": 1995, "name": "3月9日/レミオロメン", "rank": 149 },
   { "age": 1995, "name": "ヒカリヘ/miwa", "rank": 150 },
   { "age": 1995, "name": "美しい鰭/スピッツ", "rank": 151 },
-  {
-    "age": 1995,
-    "name": "一旦ステイ TONIGHT/にじさんじ (不破湊)",
-    "rank": 152
-  },
+  { "age": 1995, "name": "一旦ステイ TONIGHT/不破湊", "rank": 152 },
   { "age": 1995, "name": "アカシア/BUMP OF CHICKEN", "rank": 153 },
   { "age": 1995, "name": "かくれんぼ/AliA", "rank": 154 },
   { "age": 1995, "name": "最後の雨/中西保志", "rank": 155 },
@@ -543,7 +539,7 @@
   { "age": 1995, "name": "コロンブス/Mrs. GREEN APPLE", "rank": 378 },
   {
     "age": 1995,
-    "name": "De Lu Lu/にじさんじ [VOLTACTION (四季凪アキラ、セラフ・ダズルガーデン、風楽奏斗、渡会雲雀)]",
+    "name": "De Lu Lu/VOLTACTION (風楽奏斗， 渡会雲雀， 四季凪アキラ， セラフ・ダズルガーデン)",
     "rank": 379
   },
   { "age": 1995, "name": "Shangri-La/angela", "rank": 380 },

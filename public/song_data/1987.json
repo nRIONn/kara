@@ -425,11 +425,7 @@
   { "age": 1987, "name": "歌うたいのバラッド/斉藤和義", "rank": 320 },
   { "age": 1987, "name": "やさしいキスをして/DREAMS COME TRUE", "rank": 321 },
   { "age": 1987, "name": "さぁ/surface", "rank": 322 },
-  {
-    "age": 1987,
-    "name": "一旦ステイ TONIGHT/にじさんじ (不破湊)",
-    "rank": 323
-  },
+  { "age": 1987, "name": "一旦ステイ TONIGHT/不破湊", "rank": 323 },
   { "age": 1987, "name": "COLORS/宇多田ヒカル", "rank": 324 },
   { "age": 1987, "name": "幸福論/椎名林檎", "rank": 325 },
   { "age": 1987, "name": "Believe/Folder5", "rank": 326 },

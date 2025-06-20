@@ -167,11 +167,7 @@
   { "age": 1996, "name": "夏祭り/Whiteberry", "rank": 118 },
   { "age": 1996, "name": "リライト/ASIAN KUNG-FU GENERATION", "rank": 119 },
   { "age": 1996, "name": "美しい鰭/スピッツ", "rank": 120 },
-  {
-    "age": 1996,
-    "name": "一旦ステイ TONIGHT/にじさんじ (不破湊)",
-    "rank": 121
-  },
+  { "age": 1996, "name": "一旦ステイ TONIGHT/不破湊", "rank": 121 },
   { "age": 1996, "name": "モザイクロール/DECO*27", "rank": 122 },
   { "age": 1996, "name": "紅蓮華/LiSA", "rank": 123 },
   { "age": 1996, "name": "大阪LOVER/DREAMS COME TRUE", "rank": 124 },
@@ -581,7 +577,7 @@
   { "age": 1996, "name": "ANIMA/ReoNa", "rank": 396 },
   {
     "age": 1996,
-    "name": "De Lu Lu/にじさんじ [VOLTACTION (四季凪アキラ、セラフ・ダズルガーデン、風楽奏斗、渡会雲雀)]",
+    "name": "De Lu Lu/VOLTACTION (風楽奏斗， 渡会雲雀， 四季凪アキラ， セラフ・ダズルガーデン)",
     "rank": 397
   },
   { "age": 1996, "name": "プロローグ/Uru", "rank": 398 },

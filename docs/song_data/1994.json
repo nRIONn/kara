@@ -131,11 +131,7 @@
   { "age": 1994, "name": "紅蓮華 -アニメ映像 ver.-/LiSA", "rank": 98 },
   { "age": 1994, "name": "東京テディベア/Neru", "rank": 99 },
   { "age": 1994, "name": "アカシア/BUMP OF CHICKEN", "rank": 100 },
-  {
-    "age": 1994,
-    "name": "一旦ステイ TONIGHT/にじさんじ (不破湊)",
-    "rank": 101
-  },
+  { "age": 1994, "name": "一旦ステイ TONIGHT/不破湊", "rank": 101 },
   { "age": 1994, "name": "いけないボーダーライン/ワルキューレ", "rank": 102 },
   { "age": 1994, "name": "地球最後の告白を/kemu", "rank": 103 },
   { "age": 1994, "name": "愛をこめて花束を/Superfly", "rank": 104 },
@@ -396,7 +392,7 @@
   { "age": 1994, "name": "OVERLAP/Kimeru", "rank": 271 },
   {
     "age": 1994,
-    "name": "De Lu Lu/にじさんじ [VOLTACTION (四季凪アキラ、セラフ・ダズルガーデン、風楽奏斗、渡会雲雀)]",
+    "name": "De Lu Lu/VOLTACTION (風楽奏斗， 渡会雲雀， 四季凪アキラ， セラフ・ダズルガーデン)",
     "rank": 272
   },
   { "age": 1994, "name": "サリシノハラ/みきとP feat.初音ミク", "rank": 273 },

@@ -196,11 +196,7 @@
   { "age": 2004, "name": "SAD SONG/ちゃんみな", "rank": 139 },
   { "age": 2004, "name": "スパークル [original ver.]/RADWIMPS", "rank": 140 },
   { "age": 2004, "name": "Fighting My Way/初星学園", "rank": 141 },
-  {
-    "age": 2004,
-    "name": "一旦ステイ TONIGHT/にじさんじ (不破湊)",
-    "rank": 142
-  },
+  { "age": 2004, "name": "一旦ステイ TONIGHT/不破湊", "rank": 142 },
   { "age": 2004, "name": "Story/AI", "rank": 143 },
   {
     "age": 2004,
@@ -525,7 +521,7 @@
   { "age": 2004, "name": "I LOVE YOU/尾崎豊", "rank": 368 },
   {
     "age": 2004,
-    "name": "どきどきキュン!で大暴走/にじさんじ [いずれ菖蒲か杜若 (司賀りこ，珠乃井ナナ，綺沙良，梢桃音，ルンルン)]",
+    "name": "どきどきキュン!で大暴走/いずれ菖蒲か杜若 (司賀りこ， 珠乃井ナナ， 綺沙良， 梢桃音， ルンルン)",
     "rank": 369
   },
   { "age": 2004, "name": "ワタリドリ/[Alexandros]", "rank": 370 },
