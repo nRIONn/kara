@@ -466,11 +466,7 @@
   { "age": 1994, "name": "渡月橋 ～君 想ふ～/倉木麻衣", "rank": 329 },
   { "age": 1994, "name": "Good-bye days《本人映像》/YUI", "rank": 330 },
   { "age": 1994, "name": "ホール・ニュー・ワールド/ディズニー", "rank": 331 },
-  {
-    "age": 1994,
-    "name": "ホラフキパペット/七次元生徒会 ! (樋口楓，叶，仙河緑，三枝明那，レオス・ヴィンセント，周央サンゴ)",
-    "rank": 332
-  },
+  { "age": 1994, "name": "ホラフキパペット/七次元生徒会 !", "rank": 332 },
   { "age": 1994, "name": "え?あぁ、そう。/蝶々P feat.初音ミク", "rank": 333 },
   { "age": 1994, "name": "ウミユリ海底譚/n-buna feat.初音ミク", "rank": 334 },
   { "age": 1994, "name": "カンタレラ/WhiteFlame feat.KAITO", "rank": 335 },
@@ -607,11 +603,7 @@
   { "age": 1994, "name": "田園/玉置浩二", "rank": 422 },
   { "age": 1994, "name": "One Love/嵐", "rank": 423 },
   { "age": 1994, "name": "Bring it on/ROF-MAO", "rank": 424 },
-  {
-    "age": 1994,
-    "name": "De Lu Lu/VOLTACTION (風楽奏斗， 渡会雲雀， 四季凪アキラ， セラフ・ダズルガーデン)",
-    "rank": 425
-  },
+  { "age": 1994, "name": "De Lu Lu/VOLTACTION", "rank": 425 },
   { "age": 1994, "name": "vivi/米津玄師", "rank": 426 },
   { "age": 1994, "name": "愛迷エレジー/DECO*27", "rank": 427 },
   { "age": 1994, "name": "しるし/Mr.Children", "rank": 428 },

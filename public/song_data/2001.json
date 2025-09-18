@@ -369,11 +369,7 @@
   { "age": 2001, "name": "Stellar Stellar/星街すいせい", "rank": 268 },
   { "age": 2001, "name": "夏色/ゆず", "rank": 269 },
   { "age": 2001, "name": "ヒロイン/back number", "rank": 270 },
-  {
-    "age": 2001,
-    "name": "ホラフキパペット/七次元生徒会 ! (樋口楓，叶，仙河緑，三枝明那，レオス・ヴィンセント，周央サンゴ)",
-    "rank": 271
-  },
+  { "age": 2001, "name": "ホラフキパペット/七次元生徒会 !", "rank": 271 },
   {
     "age": 2001,
     "name": "エンヴィキャットウォーク/トーマ feat.初音ミク",
@@ -593,11 +589,7 @@
   { "age": 2001, "name": "瞳をとじて/平井堅", "rank": 408 },
   { "age": 2001, "name": "HAPPY BIRTHDAY/back number", "rank": 409 },
   { "age": 2001, "name": "完全感覚Dreamer/ONE OK ROCK", "rank": 410 },
-  {
-    "age": 2001,
-    "name": "Virtual to LIVE/月ノ美兎， 静凛， 樋口楓， える， 剣持刀也， 森中花咲， シスター・クレア， 緑仙， ドーラ， 本間ひまわり， 鷹宮リオン， ジョー・力一",
-    "rank": 411
-  },
+  { "age": 2001, "name": "Virtual to LIVE/にじさんじ", "rank": 411 },
   { "age": 2001, "name": "ヤミタイガール/れるりり feat.GUMI", "rank": 412 },
   { "age": 2001, "name": "Hurrah!!/にじさんじ", "rank": 413 },
   { "age": 2001, "name": "星座になれたら/結束バンド", "rank": 414 },
