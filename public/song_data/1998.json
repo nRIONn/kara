@@ -628,7 +628,11 @@
   },
   { "age": 1998, "name": "アイデンティティ/Kanaria", "rank": 428 },
   { "age": 1998, "name": "ホワイトハッピー/MARETU", "rank": 429 },
-  { "age": 1998, "name": "Golden/EJAE，AUDREY NUNA and REI AMI", "rank": 430 },
+  {
+    "age": 1998,
+    "name": "Golden/HUNTR/X (EJAE，AUDREY NUNA and REI AMI)",
+    "rank": 430
+  },
   { "age": 1998, "name": "ギミモ/葛葉", "rank": 431 },
   { "age": 1998, "name": "ボーイフレンド/aiko", "rank": 432 },
   { "age": 1998, "name": "トリノコシティ/40mP feat.初音ミク", "rank": 433 },

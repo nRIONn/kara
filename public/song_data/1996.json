@@ -253,7 +253,11 @@
     "rank": 181
   },
   { "age": 1996, "name": "宙船(そらふね)/TOKIO", "rank": 182 },
-  { "age": 1996, "name": "Golden/EJAE，AUDREY NUNA and REI AMI", "rank": 183 },
+  {
+    "age": 1996,
+    "name": "Golden/HUNTR/X (EJAE，AUDREY NUNA and REI AMI)",
+    "rank": 183
+  },
   { "age": 1996, "name": "二息歩行/DECO*27", "rank": 184 },
   { "age": 1996, "name": "One day/The ROOTLESS", "rank": 185 },
   { "age": 1996, "name": "Snow halation/μ's", "rank": 186 },

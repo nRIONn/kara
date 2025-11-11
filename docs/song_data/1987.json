@@ -554,7 +554,11 @@
   { "age": 1987, "name": "Butterfly Kiss/米倉千尋", "rank": 401 },
   { "age": 1987, "name": "ひゅるりらぱっぱ/tuki.", "rank": 402 },
   { "age": 1987, "name": "賜物/RADWIMPS", "rank": 403 },
-  { "age": 1987, "name": "Golden/EJAE，AUDREY NUNA and REI AMI", "rank": 404 },
+  {
+    "age": 1987,
+    "name": "Golden/HUNTR/X (EJAE，AUDREY NUNA and REI AMI)",
+    "rank": 404
+  },
   { "age": 1987, "name": "スパークル [original ver.]/RADWIMPS", "rank": 405 },
   { "age": 1987, "name": "罪と罰/椎名林檎", "rank": 406 },
   {

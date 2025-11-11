@@ -642,7 +642,11 @@
   },
   { "age": 1994, "name": "Caramel Pain/星街すいせい", "rank": 446 },
   { "age": 1994, "name": "ハッピーラッキーチャッピー/ano", "rank": 447 },
-  { "age": 1994, "name": "Golden/EJAE，AUDREY NUNA and REI AMI", "rank": 448 },
+  {
+    "age": 1994,
+    "name": "Golden/HUNTR/X (EJAE，AUDREY NUNA and REI AMI)",
+    "rank": 448
+  },
   { "age": 1994, "name": "にぎにぎにじたうん!/にじさんじ", "rank": 449 },
   { "age": 1994, "name": "春よ、来い/松任谷由実", "rank": 450 },
   { "age": 1994, "name": "心拍数♯0822/蝶々P feat.初音ミク", "rank": 451 },

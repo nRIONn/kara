@@ -260,7 +260,11 @@
   { "age": 1993, "name": "馬と鹿/米津玄師", "rank": 187 },
   { "age": 1993, "name": "ホール・ニュー・ワールド/ディズニー", "rank": 188 },
   { "age": 1993, "name": "Shangri-La/angela", "rank": 189 },
-  { "age": 1993, "name": "Golden/EJAE，AUDREY NUNA and REI AMI", "rank": 190 },
+  {
+    "age": 1993,
+    "name": "Golden/HUNTR/X (EJAE，AUDREY NUNA and REI AMI)",
+    "rank": 190
+  },
   { "age": 1993, "name": "六兆年と一夜物語/kemu", "rank": 191 },
   { "age": 1993, "name": "二息歩行/DECO*27", "rank": 192 },
   { "age": 1993, "name": "ブルーアンバー/back number", "rank": 193 },

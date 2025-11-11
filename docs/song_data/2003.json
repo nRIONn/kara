@@ -319,7 +319,11 @@
   { "age": 2003, "name": "いつか/Saucy Dog", "rank": 234 },
   { "age": 2003, "name": "おジャ魔女カーニバル!!/MAHO堂", "rank": 235 },
   { "age": 2003, "name": "Happiness/嵐", "rank": 236 },
-  { "age": 2003, "name": "Golden/EJAE，AUDREY NUNA and REI AMI", "rank": 237 },
+  {
+    "age": 2003,
+    "name": "Golden/HUNTR/X (EJAE，AUDREY NUNA and REI AMI)",
+    "rank": 237
+  },
   { "age": 2003, "name": "打上花火/DAOKO × 米津玄師", "rank": 238 },
   { "age": 2003, "name": "レクイエム/Kanaria feat.星街すいせい", "rank": 239 },
   { "age": 2003, "name": "again/YUI", "rank": 240 },

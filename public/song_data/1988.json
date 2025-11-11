@@ -135,7 +135,11 @@
   { "age": 1988, "name": "3月9日/レミオロメン", "rank": 110 },
   { "age": 1988, "name": "brave heart/宮崎歩", "rank": 111 },
   { "age": 1988, "name": "猫/DISH//", "rank": 112 },
-  { "age": 1988, "name": "Golden/EJAE，AUDREY NUNA and REI AMI", "rank": 113 },
+  {
+    "age": 1988,
+    "name": "Golden/HUNTR/X (EJAE，AUDREY NUNA and REI AMI)",
+    "rank": 113
+  },
   {
     "age": 1988,
     "name": "恋しさと せつなさと 心強さと/篠原涼子 with t.komuro",

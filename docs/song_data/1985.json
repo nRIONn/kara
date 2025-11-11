@@ -241,7 +241,11 @@
   { "age": 1985, "name": "そばかす/JUDY AND MARY", "rank": 192 },
   { "age": 1985, "name": "ツバサ/アンダーグラフ", "rank": 193 },
   { "age": 1985, "name": "Shangri-La/angela", "rank": 194 },
-  { "age": 1985, "name": "Golden/EJAE，AUDREY NUNA and REI AMI", "rank": 195 },
+  {
+    "age": 1985,
+    "name": "Golden/HUNTR/X (EJAE，AUDREY NUNA and REI AMI)",
+    "rank": 195
+  },
   { "age": 1985, "name": "あなただけ見つめてる/大黒摩季", "rank": 196 },
   { "age": 1985, "name": "命に嫌われている/カンザキイオリ", "rank": 197 },
   { "age": 1985, "name": "マトリョシカ/ハチ feat.初音ミク、GUMI", "rank": 198 },

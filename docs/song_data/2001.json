@@ -487,7 +487,11 @@
   { "age": 2001, "name": "CHE.R.RY/YUI", "rank": 342 },
   { "age": 2001, "name": "Beautiful World/宇多田ヒカル", "rank": 343 },
   { "age": 2001, "name": "ルージュの伝言/松任谷由実", "rank": 344 },
-  { "age": 2001, "name": "Golden/EJAE，AUDREY NUNA and REI AMI", "rank": 345 },
+  {
+    "age": 2001,
+    "name": "Golden/HUNTR/X (EJAE，AUDREY NUNA and REI AMI)",
+    "rank": 345
+  },
   { "age": 2001, "name": "シリョクケンサ/40mP feat.GUMI", "rank": 346 },
   { "age": 2001, "name": "Climax Jump/AAA DEN-O form", "rank": 347 },
   { "age": 2001, "name": "Anything Goes!/大黒摩季", "rank": 348 },

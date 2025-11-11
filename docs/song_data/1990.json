@@ -324,7 +324,11 @@
   { "age": 1990, "name": "めざせポケモンマスター/松本梨香", "rank": 247 },
   { "age": 1990, "name": "ボクの背中には羽根がある/KinKi Kids", "rank": 248 },
   { "age": 1990, "name": "空と君のあいだに/中島みゆき", "rank": 249 },
-  { "age": 1990, "name": "Golden/EJAE，AUDREY NUNA and REI AMI", "rank": 250 },
+  {
+    "age": 1990,
+    "name": "Golden/HUNTR/X (EJAE，AUDREY NUNA and REI AMI)",
+    "rank": 250
+  },
   { "age": 1990, "name": "春よ、来い/松任谷由実", "rank": 251 },
   { "age": 1990, "name": "Snow halation/μ's", "rank": 252 },
   { "age": 1990, "name": "夢見る少女じゃいられない/相川七瀬", "rank": 253 },

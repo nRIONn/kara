@@ -389,7 +389,11 @@
   { "age": 1995, "name": "踊り子/Vaundy", "rank": 268 },
   { "age": 1995, "name": "星座になれたら/結束バンド", "rank": 269 },
   { "age": 1995, "name": "ひゅるりらぱっぱ/tuki.", "rank": 270 },
-  { "age": 1995, "name": "Golden/EJAE，AUDREY NUNA and REI AMI", "rank": 271 },
+  {
+    "age": 1995,
+    "name": "Golden/HUNTR/X (EJAE，AUDREY NUNA and REI AMI)",
+    "rank": 271
+  },
   { "age": 1995, "name": "え?あぁ、そう。/蝶々P feat.初音ミク", "rank": 272 },
   { "age": 1995, "name": "君はロックを聴かない/あいみょん", "rank": 273 },
   {

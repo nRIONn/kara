@@ -416,7 +416,11 @@
   { "age": 1991, "name": "memories/大槻真希", "rank": 299 },
   { "age": 1991, "name": "ひゅるりらぱっぱ/tuki.", "rank": 300 },
   { "age": 1991, "name": "ハッピーラッキーチャッピー/ano", "rank": 301 },
-  { "age": 1991, "name": "Golden/EJAE，AUDREY NUNA and REI AMI", "rank": 302 },
+  {
+    "age": 1991,
+    "name": "Golden/HUNTR/X (EJAE，AUDREY NUNA and REI AMI)",
+    "rank": 302
+  },
   { "age": 1991, "name": "メランコリック/Junky feat.鏡音リン", "rank": 303 },
   { "age": 1991, "name": "Snow halation/μ's", "rank": 304 },
   { "age": 1991, "name": "Rolling star/YUI", "rank": 305 },

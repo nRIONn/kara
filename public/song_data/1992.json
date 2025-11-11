@@ -317,7 +317,11 @@
   { "age": 1992, "name": "恋におちて―Fall in love―/小林明子", "rank": 228 },
   { "age": 1992, "name": "異邦人/久保田早紀", "rank": 229 },
   { "age": 1992, "name": "美しい鰭/スピッツ", "rank": 230 },
-  { "age": 1992, "name": "Golden/EJAE，AUDREY NUNA and REI AMI", "rank": 231 },
+  {
+    "age": 1992,
+    "name": "Golden/HUNTR/X (EJAE，AUDREY NUNA and REI AMI)",
+    "rank": 231
+  },
   { "age": 1992, "name": "パンダヒーロー/ハチ feat.GUMI", "rank": 232 },
   { "age": 1992, "name": "心做し/蝶々P feat.GUMI", "rank": 233 },
   { "age": 1992, "name": "花に亡霊/ヨルシカ", "rank": 234 },

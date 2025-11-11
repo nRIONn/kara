@@ -375,7 +375,11 @@
   { "age": 2000, "name": "ココロオドル/nobodyknows+", "rank": 274 },
   { "age": 2000, "name": "if/西野カナ", "rank": 275 },
   { "age": 2000, "name": "ルージュの伝言/松任谷由実", "rank": 276 },
-  { "age": 2000, "name": "Golden/EJAE，AUDREY NUNA and REI AMI", "rank": 277 },
+  {
+    "age": 2000,
+    "name": "Golden/HUNTR/X (EJAE，AUDREY NUNA and REI AMI)",
+    "rank": 277
+  },
   { "age": 2000, "name": "本能/椎名林檎", "rank": 278 },
   { "age": 2000, "name": "Walking with you/Novelbright", "rank": 279 },
   {

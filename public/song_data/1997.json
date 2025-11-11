@@ -240,7 +240,11 @@
   { "age": 1997, "name": "三日月/絢香", "rank": 175 },
   { "age": 1997, "name": "瞬き/back number", "rank": 176 },
   { "age": 1997, "name": "楓/スピッツ", "rank": 177 },
-  { "age": 1997, "name": "Golden/EJAE，AUDREY NUNA and REI AMI", "rank": 178 },
+  {
+    "age": 1997,
+    "name": "Golden/HUNTR/X (EJAE，AUDREY NUNA and REI AMI)",
+    "rank": 178
+  },
   { "age": 1997, "name": "弱虫モンブラン/DECO*27", "rank": 179 },
   { "age": 1997, "name": "ノーダウト/Official髭男dism", "rank": 180 },
   { "age": 1997, "name": "いますぐ輪廻/なきそ", "rank": 181 },

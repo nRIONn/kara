@@ -234,7 +234,11 @@
   },
   { "age": 1999, "name": "いけないボーダーライン/ワルキューレ", "rank": 174 },
   { "age": 1999, "name": "世界に一つだけの花/SMAP", "rank": 175 },
-  { "age": 1999, "name": "Golden/EJAE，AUDREY NUNA and REI AMI", "rank": 176 },
+  {
+    "age": 1999,
+    "name": "Golden/HUNTR/X (EJAE，AUDREY NUNA and REI AMI)",
+    "rank": 176
+  },
   { "age": 1999, "name": "君はロックを聴かない/あいみょん", "rank": 177 },
   { "age": 1999, "name": "言って。/ヨルシカ", "rank": 178 },
   { "age": 1999, "name": "夢をかなえてドラえもん/mao", "rank": 179 },

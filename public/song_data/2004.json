@@ -609,7 +609,11 @@
   { "age": 2004, "name": "ファンサ/mona(CV:夏川椎菜)", "rank": 424 },
   { "age": 2004, "name": "テルーの唄/手嶌葵", "rank": 425 },
   { "age": 2004, "name": "アンチユー/Chinozo", "rank": 426 },
-  { "age": 2004, "name": "Golden/EJAE，AUDREY NUNA and REI AMI", "rank": 427 },
+  {
+    "age": 2004,
+    "name": "Golden/HUNTR/X (EJAE，AUDREY NUNA and REI AMI)",
+    "rank": 427
+  },
   { "age": 2004, "name": "ミュージック/サカナクション", "rank": 428 },
   { "age": 2004, "name": "食虫植物/理芽", "rank": 429 },
   { "age": 2004, "name": "ただ声一つ/ロクデナシ", "rank": 430 },
