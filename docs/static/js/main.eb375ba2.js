@@ -206,7 +206,6 @@
             --t &&
             C() &&
             !(b < 48 || b > 102 || (b > 57 && b < 65) || (b > 70 && b < 97));
-
           );
           return P(e, E() + (t < 6 && 32 == A() && 32 == C()));
         }
@@ -286,7 +285,6 @@
               j = r,
               $ = T;
             S;
-
           )
             switch (((x = R), (R = C()))) {
               case 40:
@@ -429,7 +427,6 @@
             for (
               var r = 0, o = 0;
               (r = o), (o = A()), 38 === r && 12 === o && (t[n] = 1), !R(o);
-
             )
               C();
             return P(e, y);
@@ -470,7 +467,6 @@
                   n = e.parent,
                   r = e.column === n.column && e.line === n.line;
                 "rule" !== n.type;
-
               )
                 if (!(n = n.parent)) return;
               if (
@@ -864,7 +860,6 @@
                 for (
                   var u, c = s.name, d = s.styles, p = s.next;
                   void 0 !== p;
-
                 )
                   ((c += " " + p.name), (d += p.styles), (p = p.next));
                 var f = !0 === t.compat,
@@ -3443,7 +3438,6 @@
                   i = o.length - 1,
                   l = a.length - 1;
                 1 <= i && 0 <= l && o[i] !== a[l];
-
               )
                 l--;
               for (; 1 <= i && 0 <= l; i--, l--)
@@ -3836,7 +3830,6 @@
                     "<svg>" + t.valueOf().toString() + "</svg>",
                     t = ue.firstChild;
                   e.firstChild;
-
                 )
                   e.removeChild(e.firstChild);
                 for (; t.firstChild; ) e.appendChild(t.firstChild);
@@ -6156,7 +6149,6 @@
           for (
             e = e.return;
             null !== e && 5 !== e.tag && 3 !== e.tag && 13 !== e.tag;
-
           )
             e = e.return;
           ra = e;
@@ -8323,7 +8315,6 @@
             for (
               n = _u((e = t.child), e.pendingProps), t.child = n, n.return = t;
               null !== e.sibling;
-
             )
               ((e = e.sibling),
                 ((n = n.sibling = _u(e, e.pendingProps)).return = t));
@@ -8714,7 +8705,6 @@
                             r = n,
                             n = t.child;
                           null !== n;
-
                         )
                           ((e = r),
                             ((i = n).flags &= 14680066),
@@ -9044,7 +9034,6 @@
             for (
               e.sibling.return = e.return, e = e.sibling;
               5 !== e.tag && 6 !== e.tag && 18 !== e.tag;
-
             ) {
               if (2 & e.flags) continue e;
               if (null === e.child || 4 === e.tag) continue e;
@@ -9754,7 +9743,6 @@
                 o = e.expirationTimes,
                 a = e.pendingLanes;
               0 < a;
-
             ) {
               var i = 31 - it(a),
                 l = 1 << i,
@@ -9817,7 +9805,6 @@
               (Ts === e && Ns === t) ||
               ((Us = null), (Bs = Ye() + 500), pu(e, t));
               ;
-
             )
               try {
                 yu();
@@ -9954,7 +9941,6 @@
               e.pingedLanes &= ~t,
               e = e.expirationTimes;
             0 < t;
-
           ) {
             var n = 31 - it(t),
               r = 1 << n;
@@ -10329,7 +10315,6 @@
                                     3 === p.nodeType &&
                                       (l += p.nodeValue.length),
                                     null !== (m = p.firstChild);
-
                                 )
                                   ((f = p), (p = m));
                                 for (;;) {
@@ -10357,7 +10342,6 @@
                           Vt = !1,
                           Zl = t;
                         null !== Zl;
-
                       )
                         if (
                           ((e = (t = Zl).child),
@@ -11108,7 +11092,6 @@
                       n = Sa(t, null, r, n),
                       t.child = n;
                     n;
-
                   )
                     ((n.flags = (-3 & n.flags) | 4096), (n = n.sibling));
                 } else {
@@ -11178,7 +11161,6 @@
                     for (
                       null !== (i = t.child) && (i.return = t);
                       null !== i;
-
                     ) {
                       var s = i.dependencies;
                       if (null !== s) {
@@ -12502,7 +12484,6 @@
             for (
               x(n), p = r(u);
               null !== p && (!(p.expirationTime > n) || (e && !T()));
-
             ) {
               var i = p.callback;
               if ("function" === typeof i) {
@@ -19121,7 +19102,7 @@
                   var r, a;
                   const e = Boolean(
                       (null == (r = v.current) ? void 0 : r.shiftKey) &&
-                        "Tab" === (null == (a = v.current) ? void 0 : a.key),
+                      "Tab" === (null == (a = v.current) ? void 0 : a.key),
                     ),
                     t = n[0],
                     o = n[n.length - 1];
