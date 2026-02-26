@@ -20,6 +20,49 @@ import {
 const defaultUrl =
   "https://www.joysound.com/web/karaoke/ranking/age/ranking?age=1995&startIndex=0"
 
+type RangeConfig = { max: number; min: number; minAge: number; maxAge: number }
+
+function RangeDialog({ open, onClose, range, setRange }: {
+  open: boolean
+  onClose: () => void
+  range: RangeConfig
+  setRange: (v: RangeConfig) => void
+}) {
+  return (
+    <Dialog open={open} onClose={onClose}>
+      <Stack padding={5} spacing={2}>
+        <Typography variant="h6">年代</Typography>
+        <TextField
+          label="最大値"
+          value={range.maxAge}
+          type="number"
+          onChange={(e) => setRange({ ...range, maxAge: Number(e.target.value) })}
+        />
+        <TextField
+          label="最小値"
+          value={range.minAge}
+          type="number"
+          onChange={(e) => setRange({ ...range, minAge: Number(e.target.value) })}
+        />
+        <Typography variant="h6">乱数</Typography>
+        <TextField
+          label="最大値"
+          value={range.max}
+          type="number"
+          onChange={(e) => setRange({ ...range, max: Number(e.target.value) })}
+        />
+        <TextField
+          label="最小値"
+          value={range.min}
+          type="number"
+          onChange={(e) => setRange({ ...range, min: Number(e.target.value) })}
+        />
+        <Button variant="contained" onClick={onClose}>閉じる</Button>
+      </Stack>
+    </Dialog>
+  )
+}
+
 /**
  * 機能
  * ・乱数が振れる
@@ -28,11 +71,9 @@ const defaultUrl =
  * ・年代±10機能
  */
 function Karaoke() {
-  const [max, setMax] = useState(500)
-  const [min, setMin] = useState(1)
+  const [range, setRange] = useState<RangeConfig>({ max: 500, min: 1, minAge: 1985, maxAge: 2005 })
+  const { max, min, minAge, maxAge } = range
   const [age, setAge] = useState(1995)
-  const [minAge, setMinAge] = useState(1985)
-  const [maxAge, setMaxAge] = useState(2005)
   const [rand, setRand] = useState(0)
   const [duplicationTitle, setDuplication] = useState("")
   const [history, setHistory] = useState<History>({ list: [] })
@@ -107,47 +148,6 @@ function Karaoke() {
   }
 
 
-
-  const RangeDialog = () => {
-    return (
-      <Dialog open={dispRange} onClose={() => setDispRange(false)} >
-        <Stack padding={5} spacing={2}>
-          <Typography variant="h6">年代</Typography>
-          <TextField
-            label="最大値"
-            value={maxAge}
-            type="number"
-            onChange={(e) => setMaxAge(Number(e.target.value))}
-          />
-          <TextField
-            label="最小値"
-            value={minAge}
-            type="number"
-            onChange={(e) => setMinAge(Number(e.target.value))}
-          />
-          <Typography variant="h6">乱数</Typography>
-          <TextField
-            label="最大値"
-            value={max}
-            type="number"
-            onChange={(e) => setMax(Number(e.target.value))}
-          />
-          <TextField
-            label="最小値"
-            value={min}
-            type="number"
-            onChange={(e) => setMin(Number(e.target.value))}
-          />
-          <Button
-            variant="contained"
-            onClick={() => setDispRange(false)}
-          >
-            閉じる
-          </Button>
-        </Stack>
-      </Dialog>
-    )
-  }
 
   return (
     <div>
@@ -244,7 +244,12 @@ function Karaoke() {
           </Stack>
         </Card>
       </Container>
-      <RangeDialog />
+      <RangeDialog
+        open={dispRange}
+        onClose={() => setDispRange(false)}
+        range={range}
+        setRange={setRange}
+      />
     </div >
   )
 }
