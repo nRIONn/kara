@@ -36,12 +36,14 @@ function RangeDialog({ open, onClose, range, setRange }: {
           label="最大値"
           value={range.maxAge}
           type="number"
+          onFocus={(e) => e.target.select()}
           onChange={(e) => setRange({ ...range, maxAge: Number(e.target.value) })}
         />
         <TextField
           label="最小値"
           value={range.minAge}
           type="number"
+          onFocus={(e) => e.target.select()}
           onChange={(e) => setRange({ ...range, minAge: Number(e.target.value) })}
         />
         <Typography variant="h6">乱数</Typography>
@@ -49,12 +51,14 @@ function RangeDialog({ open, onClose, range, setRange }: {
           label="最大値"
           value={range.max}
           type="number"
+          onFocus={(e) => e.target.select()}
           onChange={(e) => setRange({ ...range, max: Number(e.target.value) })}
         />
         <TextField
           label="最小値"
           value={range.min}
           type="number"
+          onFocus={(e) => e.target.select()}
           onChange={(e) => setRange({ ...range, min: Number(e.target.value) })}
         />
         <Button variant="contained" onClick={onClose}>閉じる</Button>
@@ -86,6 +90,12 @@ function Karaoke() {
     try {
       const number = Math.ceil(Math.random() * (max - min + 1)) + min - 1
       const title = await getSongName(number, age)
+
+      if (!title) {
+        setRand(number)
+        return
+      }
+
       const duplicate = history.list.some((li) => li.title === title)
 
       // 重複確認して履歴に追加
@@ -177,6 +187,7 @@ function Karaoke() {
                     label="年代"
                     value={age}
                     type="number"
+                    onFocus={(e) => e.target.select()}
                     onChange={(e) => setAge(Number(e.target.value))}
                   />
                   <Button variant="contained" onClick={changeAge}>
