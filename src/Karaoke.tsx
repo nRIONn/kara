@@ -86,10 +86,10 @@ function Karaoke() {
     try {
       const number = Math.ceil(Math.random() * (max - min + 1)) + min - 1
       const title = await getSongName(number, age)
-      const duplictate = history.list.some((li) => li.title === title)
+      const duplicate = history.list.some((li) => li.title === title)
 
       // 重複確認して履歴に追加
-      if (!duplictate) {
+      if (!duplicate) {
         const newHistory = {
           number: number,
           time: new Date().getTime(),

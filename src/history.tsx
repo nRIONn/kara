@@ -118,7 +118,7 @@ export const getSongName = async (
 
   if (!song) {
     console.error("song is not found.");
-    throw new Error();
+    return "";
   }
   return song?.name;
 };
