@@ -40,15 +40,8 @@ export const HistoryList = (props: {
   };
 
   const historyListElement = [...history.list].reverse().map((his) => (
-    <Stack
-      direction={"row"}
-      style={{ alignItems: "center" }}
-      key={his.time}
-    >
-      <Typography
-        component="span"
-        sx={{ mb: 1, display: "block" }}
-      >
+    <Stack direction={"row"} style={{ alignItems: "center" }} key={his.time}>
+      <Typography component="span" sx={{ mb: 1, display: "block" }}>
         {his.number}-{his.title}
       </Typography>
       {isRemove && (
@@ -76,9 +69,7 @@ export const HistoryList = (props: {
   );
 };
 
-export const getSongName = async (
-  rank: number,
-): Promise<string> => {
+export const getSongName = async (rank: number): Promise<string> => {
   const res = await fetch(`${process.env.PUBLIC_URL}/song_data/ranking.json`);
   type SongData = { name: string; rank: number };
   // ex) [{ "age": 1988, "name": "晩餐歌/tuki.", "rank": 2 }]

@@ -7,22 +7,27 @@ import {
   Stack,
   TextField,
   Typography,
-} from "@mui/material"
-import { useEffect, useState } from "react"
+} from "@mui/material";
+import { useEffect, useState } from "react";
 import {
   getSongName,
   History,
   HistoryList,
   intializeHistory,
   storeHistory,
-} from "./history"
-type RangeConfig = { max: number; min: number }
+} from "./history";
+type RangeConfig = { max: number; min: number };
 
-function RangeDialog({ open, onClose, range, setRange }: {
-  open: boolean
-  onClose: () => void
-  range: RangeConfig
-  setRange: (v: RangeConfig) => void
+function RangeDialog({
+  open,
+  onClose,
+  range,
+  setRange,
+}: {
+  open: boolean;
+  onClose: () => void;
+  range: RangeConfig;
+  setRange: (v: RangeConfig) => void;
 }) {
   return (
     <Dialog open={open} onClose={onClose}>
@@ -42,10 +47,12 @@ function RangeDialog({ open, onClose, range, setRange }: {
           onFocus={(e) => e.target.select()}
           onChange={(e) => setRange({ ...range, min: Number(e.target.value) })}
         />
-        <Button variant="contained" onClick={onClose}>閉じる</Button>
+        <Button variant="contained" onClick={onClose}>
+          閉じる
+        </Button>
       </Stack>
     </Dialog>
-  )
+  );
 }
 
 /**
@@ -56,21 +63,22 @@ function RangeDialog({ open, onClose, range, setRange }: {
  * ・年代±10機能
  */
 function Karaoke() {
-  const [range, setRange] = useState<RangeConfig>({ max: 300, min: 1 })
-  const { max, min } = range
-  const [rand, setRand] = useState(0)
-  const [duplicationTitle, setDuplication] = useState("")
-  const [history, setHistory] = useState<History>({ list: [] })
-  const [remove, setRemove] = useState(false)
-  const [dispRange, setDispRange] = useState(false)
-
+  const [range, setRange] = useState<RangeConfig>({ max: 300, min: 1 });
+  const { max, min } = range;
+  const [rand, setRand] = useState(0);
+  const [duplicationTitle, setDuplication] = useState("");
+  const [history, setHistory] = useState<History>({ list: [] });
+  const [remove, setRemove] = useState(false);
+  const [dispRange, setDispRange] = useState(false);
 
   const createRandom = async () => {
     try {
-      const number = Math.ceil(Math.random() * (max - min + 1)) + min - 1
-      const title = await getSongName(number)
+      const number = Math.ceil(Math.random() * (max - min + 1)) + min - 1;
+      const title = await getSongName(number);
 
-      const duplicate = history.list.some((li) => li.title === title && li.number === number)
+      const duplicate = history.list.some(
+        (li) => li.title === title && li.number === number,
+      );
 
       // 重複確認して履歴に追加
       if (!duplicate) {
@@ -78,32 +86,30 @@ function Karaoke() {
           number: number,
           time: new Date().getTime(),
           title,
-        }
-        setHistory({ list: [...history.list, newHistory] })
-        setDuplication("")
+        };
+        setHistory({ list: [...history.list, newHistory] });
+        setDuplication("");
       } else {
         // 重複表示
-        setDuplication(title)
+        setDuplication(title);
       }
 
-      setRand(number)
+      setRand(number);
     } catch (e) {
-      console.error(e)
+      console.error(e);
     }
-  }
+  };
 
-  useEffect(() => storeHistory(history), [history])
+  useEffect(() => storeHistory(history), [history]);
 
   // 履歴の初期取得
-  useEffect(() => setHistory(intializeHistory()), [])
+  useEffect(() => setHistory(intializeHistory()), []);
 
   const deleteAllHistory = () => {
-    localStorage.clear()
-    setHistory({ list: [] })
-    setRemove(false)
-  }
-
-
+    localStorage.clear();
+    setHistory({ list: [] });
+    setRemove(false);
+  };
 
   return (
     <div>
@@ -184,8 +190,8 @@ function Karaoke() {
         range={range}
         setRange={setRange}
       />
-    </div >
-  )
+    </div>
+  );
 }
 
-export default Karaoke
+export default Karaoke;
