@@ -1,4 +1,4 @@
-import { List, ListItem, Stack, Typography } from "@mui/material";
+import { List, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import { ConfirmDialog } from "./ConfirmDialog";
 
@@ -18,7 +18,6 @@ export type HistoryListItem = {
   number?: number;
   title: string;
   time: number;
-  age: number;
 };
 
 // ミリ秒
@@ -35,64 +34,36 @@ export const HistoryList = (props: {
   if (history.list.length < 1)
     return <List sx={{ display: "flex", flexWrap: "wrap" }}></List>;
 
-  // 一次配列
-  const tempArray: HistoryListItem[] = [];
-  // 二次元配列
-  const converetHistoryList: HistoryListItem[][] = [];
-  history.list.forEach((a) => {
-    if (tempArray.length && a.age !== tempArray[0].age) {
-      // 年が変わってる
-      // tempArrayを二次元配列の一部にする
-      converetHistoryList.push([...tempArray]);
-      // tempArrayの初期化
-      tempArray.splice(0);
-    }
-    tempArray.push(a);
-  });
-
-  // 選択されたタイトルを消す
   const deleteHistory = (title: string) => {
     setHistory({ list: history.list.filter((his) => his.title !== title) });
     setSongName("");
   };
-  converetHistoryList.push(tempArray);
 
-  const historyListElement = converetHistoryList.reverse().map((historys) => (
-    <ListItem key={historys[0].time} sx={{ display: "block", p: 0 }}>
+  const historyListElement = [...history.list].reverse().map((his) => (
+    <Stack
+      direction={"row"}
+      style={{ alignItems: "center" }}
+      key={his.time}
+    >
       <Typography
         component="span"
-        sx={{ mb: 1, display: "block", fontWeight: "bold" }}
+        sx={{ mb: 1, display: "block" }}
       >
-        {historys[0].age}年
+        {his.number}-{his.title}
       </Typography>
-      {historys.reverse().map((his) => (
-        <Stack
-          direction={"row"}
-          style={{ alignItems: "center", justifyContent: "space-between" }}
-          key={his.title}
+      {isRemove && (
+        <button
+          style={{ background: "none", border: "none" }}
+          onClick={() => setSongName(his.title)}
         >
-          <Typography
-            component="span"
-            sx={{ mb: 1, display: "block" }}
-            key={his.time}
-          >
-            {his.number}-{his.title}
-          </Typography>
-          {isRemove && (
-            <button
-              style={{ background: "none", border: "none" }}
-              onClick={() => setSongName(his.title)}
-            >
-              <TrashSVG />
-            </button>
-          )}
-        </Stack>
-      ))}
-    </ListItem>
+          <TrashSVG />
+        </button>
+      )}
+    </Stack>
   ));
 
   return (
-    <List sx={{ display: "flex", flexWrap: "wrap" }}>
+    <List sx={{ width: "100%" }}>
       {historyListElement}
       <ConfirmDialog
         key={"dialog"}
@@ -107,11 +78,9 @@ export const HistoryList = (props: {
 
 export const getSongName = async (
   rank: number,
-  age: number,
 ): Promise<string> => {
-  // Jsonを開く song_data/{data.age}.json
-  const res = await fetch(`${process.env.PUBLIC_URL}/song_data/${age}.json`);
-  type SongData = { age: string; name: string; rank: number };
+  const res = await fetch(`${process.env.PUBLIC_URL}/song_data/ranking.json`);
+  type SongData = { name: string; rank: number };
   // ex) [{ "age": 1988, "name": "晩餐歌/tuki.", "rank": 2 }]
   const songDataList: SongData[] = await res.json();
   const song = songDataList.find((s) => s.rank === rank);

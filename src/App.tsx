@@ -40,7 +40,6 @@ function App() {
 }
 
 export type SongData = {
-  age: Number;
   rank: Number;
   name: string;
 };
