@@ -21846,31 +21846,29 @@
             return (0, ze.jsx)(io, {
               sx: { display: "flex", flexWrap: "wrap" },
             });
-          const l = [...n.list]
-            .reverse()
-            .map((e) =>
-              (0, ze.jsxs)(
-                Qt,
-                {
-                  direction: "row",
-                  style: { alignItems: "center" },
-                  children: [
-                    (0, ze.jsxs)(hn, {
-                      component: "span",
-                      sx: { mb: 1, display: "block" },
-                      children: [e.number, "-", e.title],
+          const l = [...n.list].reverse().map((e) =>
+            (0, ze.jsxs)(
+              Qt,
+              {
+                direction: "row",
+                style: { alignItems: "center" },
+                children: [
+                  (0, ze.jsxs)(hn, {
+                    component: "span",
+                    sx: { mb: 1, display: "block" },
+                    children: [e.number, "-", e.title],
+                  }),
+                  r &&
+                    (0, ze.jsx)("button", {
+                      style: { background: "none", border: "none" },
+                      onClick: () => i(e.title),
+                      children: (0, ze.jsx)(_i, {}),
                     }),
-                    r &&
-                      (0, ze.jsx)("button", {
-                        style: { background: "none", border: "none" },
-                        onClick: () => i(e.title),
-                        children: (0, ze.jsx)(_i, {}),
-                      }),
-                  ],
-                },
-                e.time,
-              ),
-            );
+                ],
+              },
+              e.time,
+            ),
+          );
           return (0, ze.jsxs)(io, {
             sx: { width: "100%" },
             children: [
