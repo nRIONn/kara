@@ -51,10 +51,12 @@ jobs:
           
           # 念のため main に合わせる
           git checkout main
-        
-          # push 前に最新を取り込む（fast-forward不可を回避）
+
+          # 変更を一時退避してから最新を取り込む
+          git stash
           git fetch origin main
           git rebase origin/main
+          git stash pop
           git add .
           git commit -m "song_name update at ${{ env.CURRENT_DATETIME }}" --allow-empty
           git push
