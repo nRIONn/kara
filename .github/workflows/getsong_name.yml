@@ -56,7 +56,7 @@ jobs:
           git stash
           git fetch origin main
           git rebase origin/main
-          git stash pop
+          git stash pop 2>/dev/null || true
           git add .
           git commit -m "song_name update at ${{ env.CURRENT_DATETIME }}" --allow-empty
           git push
