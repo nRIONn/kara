@@ -17,6 +17,7 @@ export type History = {
 export type HistoryListItem = {
   number?: number;
   title: string;
+  artist: string;
   time: number;
 };
 
@@ -42,7 +43,7 @@ export const HistoryList = (props: {
   const historyListElement = [...history.list].reverse().map((his) => (
     <Stack direction={"row"} style={{ alignItems: "center" }} key={his.time}>
       <Typography component="span" sx={{ mb: 1, display: "block" }}>
-        {his.number}-{his.title}
+        {his.number}-{his.title} / {his.artist}
       </Typography>
       {isRemove && (
         <button
@@ -69,18 +70,18 @@ export const HistoryList = (props: {
   );
 };
 
-export const getSongName = async (rank: number): Promise<string> => {
+export const getSongName = async (rank: number): Promise<{ name: string; artist: string }> => {
   const res = await fetch(`${process.env.PUBLIC_URL}/song_data/ranking.json`);
-  type SongData = { name: string; rank: number };
-  // ex) [{ "age": 1988, "name": "晩餐歌/tuki.", "rank": 2 }]
+  type SongData = { name: string; artist: string; rank: number };
+  // ex) [{ "age": 1988, "name": "晩餐歌/tuki.", "artist": "tuki.", "rank": 2 }]
   const songDataList: SongData[] = await res.json();
   const song = songDataList.find((s) => s.rank === rank);
 
   if (!song) {
     console.error("song is not found.");
-    return "";
+    return { name: "", artist: "" };
   }
-  return song?.name;
+  return { name: song.name, artist: song.artist };
 };
 
 export const storeHistory = (history: History) => {

@@ -74,7 +74,7 @@ function Karaoke() {
   const createRandom = async () => {
     try {
       const number = Math.ceil(Math.random() * (max - min + 1)) + min - 1;
-      const title = await getSongName(number);
+      const { name: title, artist } = await getSongName(number);
 
       const duplicate = history.list.some(
         (li) => li.title === title && li.number === number,
@@ -86,6 +86,7 @@ function Karaoke() {
           number: number,
           time: new Date().getTime(),
           title,
+          artist,
         };
         setHistory({ list: [...history.list, newHistory] });
         setDuplication("");

@@ -42,6 +42,7 @@ function App() {
 export type SongData = {
   rank: Number;
   name: string;
+  artist: string;
 };
 
 export default App;

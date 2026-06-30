@@ -9,10 +9,12 @@ test("generate song names from manekineko ranking", async ({ page }) => {
   await rows.nth(0).waitFor();
 
   const names = await rows.locator("td:nth-child(2)").allInnerTexts();
+  const artists = await rows.locator("td:nth-child(3)").allInnerTexts();
 
   const songNameData: SongData[] = names.map((name, i) => ({
     age: 2026,
     name,
+    artist: artists[i],
     rank: i + 1,
   }));
 
