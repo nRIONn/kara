@@ -70,7 +70,9 @@ export const HistoryList = (props: {
   );
 };
 
-export const getSongName = async (rank: number): Promise<{ name: string; artist: string }> => {
+export const getSongName = async (
+  rank: number,
+): Promise<{ name: string; artist: string }> => {
   const res = await fetch(`${process.env.PUBLIC_URL}/song_data/ranking.json`);
   type SongData = { name: string; artist: string; rank: number };
   // ex) [{ "age": 1988, "name": "晩餐歌/tuki.", "artist": "tuki.", "rank": 2 }]
