@@ -10,6 +10,12 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   test:
@@ -33,12 +39,10 @@ jobs:
           npx update-browserslist-db@latest
           npx playwright test
         shell: bash
-      - name: デプロイ
+      - name: ビルド
         run: |
-          npm ci
           npx prettier . -w
           npm run build
-          npx cpx "build/**" "docs/"
         shell: bash
       - name: Set current datetime as env variable
         env:
@@ -48,7 +52,7 @@ jobs:
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          
+
           # 念のため main に合わせる
           git checkout main
 
@@ -57,7 +61,22 @@ jobs:
           git fetch origin main
           git rebase origin/main
           git stash pop 2>/dev/null || true
-          git add .
+          git add public/song_data/ranking.json
           git commit -m "song_name update at ${{ env.CURRENT_DATETIME }}" --allow-empty
           git push
         shell: bash
+      - name: Pages アーティファクトをアップロード
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-22.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: GitHub Pages にデプロイ
+        id: deployment
+        uses: actions/deploy-pages@v5
