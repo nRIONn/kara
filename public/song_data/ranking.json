@@ -1,230 +1,185 @@
 [
-  { "age": 2026, "name": "Marigold", "artist": "Aimyon", "rank": 1 },
+  { "age": 2026, "name": "マリーゴールド", "artist": "あいみょん", "rank": 1 },
   {
     "age": 2026,
-    "name": "Playing at being lovers",
-    "artist": "Macaroni Pencil",
+    "name": "恋人ごっこ",
+    "artist": "マカロニえんぴつ",
     "rank": 2
   },
-  { "age": 2026, "name": "Goodbye Elegy", "artist": "Masaki Suda", "rank": 3 },
-  { "age": 2026, "name": "Saudade", "artist": "Porno Graffitti", "rank": 4 },
+  { "age": 2026, "name": "さよならエレジー", "artist": "菅田将暉", "rank": 3 },
   {
     "age": 2026,
-    "name": "A bouquet of flowers with love",
-    "artist": "Superfly",
-    "rank": 5
+    "name": "サウダージ",
+    "artist": "ポルノグラフィティ",
+    "rank": 4
   },
+  { "age": 2026, "name": "愛をこめて花束を", "artist": "Superfly", "rank": 5 },
+  { "age": 2026, "name": "好きすぎて滅！", "artist": "M!LK", "rank": 6 },
+  { "age": 2026, "name": "シルエット", "artist": "KANA-BOON", "rank": 7 },
+  { "age": 2026, "name": "たなばたさま", "artist": "童謡", "rank": 8 },
+  { "age": 2026, "name": "水平線", "artist": "back number", "rank": 9 },
   {
     "age": 2026,
-    "name": "I love it so much I could die!",
-    "artist": "M!LK",
-    "rank": 6
-  },
-  { "age": 2026, "name": "silhouette", "artist": "KANA-BOON", "rank": 7 },
-  {
-    "age": 2026,
-    "name": "Tanabata-sama",
-    "artist": "Nursery rhymes",
-    "rank": 8
-  },
-  {
-    "age": 2026,
-    "name": "horizontal line",
-    "artist": "back number",
-    "rank": 9
-  },
-  {
-    "age": 2026,
-    "name": "Swallowtail butterfly",
-    "artist": "Porno Graffitti",
+    "name": "アゲハ蝶",
+    "artist": "ポルノグラフィティ",
     "rank": 10
   },
+  { "age": 2026, "name": "怪獣の花唄", "artist": "Vaundy", "rank": 11 },
+  { "age": 2026, "name": "IRIS OUT", "artist": "米津玄師", "rank": 12 },
   {
     "age": 2026,
-    "name": "Monster Flower Song",
-    "artist": "Vaundy",
-    "rank": 11
-  },
-  { "age": 2026, "name": "IRIS OUT", "artist": "Kenshi Yonezu", "rank": 12 },
-  {
-    "age": 2026,
-    "name": "A Cruel Angel's Thesis",
-    "artist": "Yoko Takahashi",
+    "name": "残酷な天使のテーゼ",
+    "artist": "高橋洋子",
     "rank": 13
   },
   {
     "age": 2026,
-    "name": "Takane no Hanako-san",
+    "name": "高嶺の花子さん",
     "artist": "back number",
     "rank": 14
   },
-  { "age": 2026, "name": "Supper Song", "artist": "tuki.", "rank": 15 },
+  { "age": 2026, "name": "晩餐歌", "artist": "tuki.", "rank": 15 },
   {
     "age": 2026,
-    "name": "Pointillist Song (feat. Sonoko Inoue)",
+    "name": "点描の唄 (feat. 井上苑子)",
     "artist": "Mrs. GREEN APPLE",
     "rank": 16
   },
-  { "age": 2026, "name": "Darling", "artist": "Mrs. GREEN APPLE", "rank": 17 },
+  { "age": 2026, "name": "ダーリン", "artist": "Mrs. GREEN APPLE", "rank": 17 },
   {
     "age": 2026,
-    "name": "Marunouchi Sadistic",
-    "artist": "Shiina Ringo",
+    "name": "丸ノ内サディスティック",
+    "artist": "椎名林檎",
     "rank": 18
   },
-  { "age": 2026, "name": "lilac", "artist": "Mrs. GREEN APPLE", "rank": 19 },
-  { "age": 2026, "name": "I love you so much", "artist": "M!LK", "rank": 20 },
-  { "age": 2026, "name": "Lewd", "artist": "Chanmina", "rank": 21 },
-  { "age": 2026, "name": "Dried flowers", "artist": "Yuri", "rank": 22 },
-  { "age": 2026, "name": "cat", "artist": "DISH//", "rank": 23 },
   {
     "age": 2026,
-    "name": "My boyfriend is left-handed.",
-    "artist": "Megumi Asaoka",
+    "name": "ライラック",
+    "artist": "Mrs. GREEN APPLE",
+    "rank": 19
+  },
+  { "age": 2026, "name": "爆裂愛してる", "artist": "M!LK", "rank": 20 },
+  { "age": 2026, "name": "ハレンチ", "artist": "ちゃんみな", "rank": 21 },
+  { "age": 2026, "name": "ドライフラワー", "artist": "優里", "rank": 22 },
+  { "age": 2026, "name": "猫", "artist": "DISH//", "rank": 23 },
+  {
+    "age": 2026,
+    "name": "わたしの彼は左きき",
+    "artist": "麻丘めぐみ",
     "rank": 24
   },
+  { "age": 2026, "name": "魔法の絨毯", "artist": "川崎鷹也", "rank": 25 },
+  { "age": 2026, "name": "とくべチュ、して", "artist": "=LOVE", "rank": 26 },
   {
     "age": 2026,
-    "name": "Magic carpet",
-    "artist": "Takaya Kawasaki",
-    "rank": 25
-  },
-  { "age": 2026, "name": "Specially,", "artist": "=LOVE", "rank": 26 },
-  {
-    "age": 2026,
-    "name": "I want to express my love",
-    "artist": "Aimyon",
+    "name": "愛を伝えたいだとか",
+    "artist": "あいみょん",
     "rank": 27
   },
+  { "age": 2026, "name": "イケナイ太陽", "artist": "ORANGE RANGE", "rank": 28 },
+  { "age": 2026, "name": "トリセツ", "artist": "西野カナ", "rank": 29 },
+  { "age": 2026, "name": "Love so sweet", "artist": "嵐", "rank": 30 },
+  { "age": 2026, "name": "タッチ", "artist": "岩崎良美", "rank": 31 },
+  { "age": 2026, "name": "幾億光年", "artist": "Omoinotake", "rank": 32 },
   {
     "age": 2026,
-    "name": "The Forbidden Sun",
-    "artist": "ORANGE RANGE",
-    "rank": 28
-  },
-  {
-    "age": 2026,
-    "name": "Instruction manual",
-    "artist": "Kana Nishino",
-    "rank": 29
-  },
-  { "age": 2026, "name": "Love so sweet", "artist": "storm", "rank": 30 },
-  { "age": 2026, "name": "touch", "artist": "Yoshimi Iwasaki", "rank": 31 },
-  {
-    "age": 2026,
-    "name": "billions of light years",
-    "artist": "Omoinotake",
-    "rank": 32
-  },
-  {
-    "age": 2026,
-    "name": "Premium Wagyu Beef Tongue Grilled with Salt: 680 yen",
-    "artist": "Ai Otsuka",
+    "name": "黒毛和牛上塩タン焼680円",
+    "artist": "大塚愛",
     "rank": 33
   },
+  { "age": 2026, "name": "小さな恋のうた", "artist": "MONGOL800", "rank": 34 },
+  { "age": 2026, "name": "カブトムシ", "artist": "aiko", "rank": 35 },
   {
     "age": 2026,
-    "name": "A Little Love Song",
-    "artist": "MONGOL800",
-    "rank": 34
-  },
-  { "age": 2026, "name": "Beetle", "artist": "aiko", "rank": 35 },
-  {
-    "age": 2026,
-    "name": "Blueberry Nights",
-    "artist": "Macaroni Pencil",
+    "name": "ブルーベリー・ナイツ",
+    "artist": "マカロニえんぴつ",
     "rank": 36
   },
-  { "age": 2026, "name": "love", "artist": "back number", "rank": 37 },
-  { "age": 2026, "name": "Naked Heart", "artist": "Aimyon", "rank": 38 },
-  { "age": 2026, "name": "Miracle", "artist": "GReeeeN", "rank": 39 },
-  { "age": 2026, "name": "monster", "artist": "Sakanaction", "rank": 40 },
+  { "age": 2026, "name": "恋", "artist": "back number", "rank": 37 },
+  { "age": 2026, "name": "裸の心", "artist": "あいみょん", "rank": 38 },
+  { "age": 2026, "name": "キセキ", "artist": "GReeeeN", "rank": 39 },
+  { "age": 2026, "name": "怪獣", "artist": "サカナクション", "rank": 40 },
   {
     "age": 2026,
     "name": "Bling-Bang-Bang-Born",
     "artist": "Creepy Nuts",
     "rank": 41
   },
-  { "age": 2026, "name": "Cherry", "artist": "Ai Otsuka", "rank": 42 },
+  { "age": 2026, "name": "さくらんぼ", "artist": "大塚愛", "rank": 42 },
+  { "age": 2026, "name": "ただ君に晴れ", "artist": "ヨルシカ", "rank": 43 },
+  { "age": 2026, "name": "青と夏", "artist": "Mrs. GREEN APPLE", "rank": 44 },
+  { "age": 2026, "name": "366日", "artist": "HY", "rank": 45 },
   {
     "age": 2026,
-    "name": "Just for you, sunny weather",
-    "artist": "Yorushika",
-    "rank": 43
-  },
-  {
-    "age": 2026,
-    "name": "Blue and Summer",
-    "artist": "Mrs. GREEN APPLE",
-    "rank": 44
-  },
-  { "age": 2026, "name": "366 days", "artist": "HY", "rank": 45 },
-  {
-    "age": 2026,
-    "name": "Que sera sera",
+    "name": "ケセラセラ",
     "artist": "Mrs. GREEN APPLE",
     "rank": 46
   },
   {
     "age": 2026,
-    "name": "100 percent for you",
-    "artist": "Kyary Pamyu Pamyu",
+    "name": "キミに100パーセント",
+    "artist": "きゃりーぱみゅぱみゅ",
     "rank": 47
   },
-  { "age": 2026, "name": "cherry", "artist": "Spitz", "rank": 48 },
-  { "age": 2026, "name": "Planetarium", "artist": "Ai Otsuka", "rank": 49 },
+  { "age": 2026, "name": "チェリー", "artist": "スピッツ", "rank": 48 },
+  { "age": 2026, "name": "プラネタリウム", "artist": "大塚愛", "rank": 49 },
+  { "age": 2026, "name": "ひまわりの約束", "artist": "秦基博", "rank": 50 },
+  { "age": 2026, "name": "桜が降る夜は", "artist": "あいみょん", "rank": 51 },
+  { "age": 2026, "name": "Happiness", "artist": "嵐", "rank": 52 },
   {
     "age": 2026,
-    "name": "Sunflower Promise",
-    "artist": "Motohiro Hata",
-    "rank": 50
-  },
-  {
-    "age": 2026,
-    "name": "On nights when cherry blossoms fall",
-    "artist": "Aimyon",
-    "rank": 51
-  },
-  { "age": 2026, "name": "Happiness", "artist": "storm", "rank": 52 },
-  {
-    "age": 2026,
-    "name": "I'm never going to fall in love again.",
-    "artist": "Takayuki Makihara",
+    "name": "もう恋なんてしない",
+    "artist": "槇原敬之",
     "rank": 53
   },
-  { "age": 2026, "name": "Cinderella Boy", "artist": "Saucy Dog", "rank": 54 },
-  { "age": 2026, "name": "Bridge of Glory", "artist": "Yuzu", "rank": 55 },
-  { "age": 2026, "name": "Serenade", "artist": "Natori", "rank": 56 },
-  { "age": 2026, "name": "bouquet", "artist": "back number", "rank": 57 },
-  { "age": 2026, "name": "Proposal", "artist": "Natori", "rank": 58 },
-  { "age": 2026, "name": "KissHug", "artist": "aiko", "rank": 59 },
-  { "age": 2026, "name": "happiness", "artist": "back number", "rank": 60 },
   {
     "age": 2026,
-    "name": "You don't listen to rock music.",
-    "artist": "Aimyon",
+    "name": "シンデレラボーイ",
+    "artist": "Saucy Dog",
+    "rank": 54
+  },
+  { "age": 2026, "name": "栄光の架橋", "artist": "ゆず", "rank": 55 },
+  { "age": 2026, "name": "セレナーデ", "artist": "なとり", "rank": 56 },
+  { "age": 2026, "name": "花束", "artist": "back number", "rank": 57 },
+  { "age": 2026, "name": "プロポーズ", "artist": "なとり", "rank": 58 },
+  { "age": 2026, "name": "KissHug", "artist": "aiko", "rank": 59 },
+  { "age": 2026, "name": "幸せ", "artist": "back number", "rank": 60 },
+  {
+    "age": 2026,
+    "name": "君はロックを聴かない",
+    "artist": "あいみょん",
     "rank": 61
   },
-  { "age": 2026, "name": "Happy ending", "artist": "back number", "rank": 62 },
-  { "age": 2026, "name": "Kanade", "artist": "Sukima Switch", "rank": 63 },
-  { "age": 2026, "name": "rainbow", "artist": "Masaki Suda", "rank": 64 },
-  { "age": 2026, "name": "Checked dress", "artist": "back number", "rank": 65 },
   {
     "age": 2026,
-    "name": "1.15 million kilometers of film",
-    "artist": "Official Hige Dandism",
+    "name": "ハッピーエンド",
+    "artist": "back number",
+    "rank": 62
+  },
+  { "age": 2026, "name": "奏(かなで)", "artist": "スキマスイッチ", "rank": 63 },
+  { "age": 2026, "name": "虹", "artist": "菅田将暉", "rank": 64 },
+  {
+    "age": 2026,
+    "name": "チェックのワンピース",
+    "artist": "back number",
+    "rank": 65
+  },
+  {
+    "age": 2026,
+    "name": "115万キロのフィルム",
+    "artist": "Official髭男dism",
     "rank": 66
   },
-  { "age": 2026, "name": "Lemon", "artist": "Kenshi Yonezu", "rank": 67 },
+  { "age": 2026, "name": "Lemon", "artist": "米津玄師", "rank": 67 },
   {
     "age": 2026,
-    "name": "Whimsical Romantic",
-    "artist": "Ikimonogakari",
+    "name": "気まぐれロマンティック",
+    "artist": "いきものがかり",
     "rank": 68
   },
   {
     "age": 2026,
-    "name": "Make your dreams come true, Doraemon",
+    "name": "夢をかなえてドラえもん",
     "artist": "mao",
     "rank": 69
   },
@@ -232,65 +187,55 @@
   { "age": 2026, "name": "lulu.", "artist": "Mrs. GREEN APPLE", "rank": 71 },
   {
     "age": 2026,
-    "name": "The world is falling in love",
+    "name": "世界は恋に落ちている",
     "artist": "CHiCO with HoneyWorks",
     "rank": 72
   },
   {
     "age": 2026,
     "name": "JANE DOE",
-    "artist": "Kenshi Yonezu, Hikaru Utada",
+    "artist": "米津玄師，宇多田ヒカル",
     "rank": 73
   },
-  { "age": 2026, "name": "dancer", "artist": "Vaundy", "rank": 74 },
+  { "age": 2026, "name": "踊り子", "artist": "Vaundy", "rank": 74 },
   { "age": 2026, "name": "CITRUS", "artist": "Da-iCE", "rank": 75 },
   {
     "age": 2026,
     "name": "Pretender",
-    "artist": "Official Hige Dandism",
+    "artist": "Official髭男dism",
     "rank": 76
   },
   {
     "age": 2026,
-    "name": "Is being cute not enough?",
+    "name": "かわいいだけじゃだめですか？",
     "artist": "CUTIE STREET",
     "rank": 77
   },
-  { "age": 2026, "name": "March 9", "artist": "Remioromen", "rank": 78 },
+  { "age": 2026, "name": "3月9日", "artist": "レミオロメン", "rank": 78 },
   {
     "age": 2026,
-    "name": "I am the strongest (Uta from ONE PIECE FILM RED)",
+    "name": "私は最強 (ウタ from ONE PIECE FILM RED)",
     "artist": "Ado",
     "rank": 79
   },
-  {
-    "age": 2026,
-    "name": "Shintakarajima",
-    "artist": "Sakanaction",
-    "rank": 80
-  },
-  { "age": 2026, "name": "Echoing Song", "artist": "Lifemer", "rank": 81 },
-  { "age": 2026, "name": "One Love", "artist": "storm", "rank": 82 },
-  {
-    "age": 2026,
-    "name": "Snow, Moon, and Flowers",
-    "artist": "Young Skinny",
-    "rank": 83
-  },
+  { "age": 2026, "name": "新宝島", "artist": "サカナクション", "rank": 80 },
+  { "age": 2026, "name": "残響散歌", "artist": "Aimer", "rank": 81 },
+  { "age": 2026, "name": "One Love", "artist": "嵐", "rank": 82 },
+  { "age": 2026, "name": "雪月花", "artist": "ヤングスキニー", "rank": 83 },
   { "age": 2026, "name": "HANABI", "artist": "Mr.Children", "rank": 84 },
-  { "age": 2026, "name": "Harunohi", "artist": "Aimyon", "rank": 85 },
+  { "age": 2026, "name": "ハルノヒ", "artist": "あいみょん", "rank": 85 },
   {
     "age": 2026,
-    "name": "Orihime and BABY feat. Shioreira",
-    "artist": "Bedhead.",
+    "name": "織姫とBABY feat. 汐れいら",
+    "artist": "ねぐせ。",
     "rank": 86
   },
-  { "age": 2026, "name": "Rainbow", "artist": "Ayaka", "rank": 87 },
+  { "age": 2026, "name": "にじいろ", "artist": "絢香", "rank": 87 },
   { "age": 2026, "name": "Soranji", "artist": "Mrs. GREEN APPLE", "rank": 88 },
   {
     "age": 2026,
-    "name": "A Letter ~To My Fifteen-Year-Old Self~",
-    "artist": "Angela Aki",
+    "name": "手紙 ～拝啓 十五の君へ～",
+    "artist": "アンジェラ・アキ",
     "rank": 89
   },
   { "age": 2026, "name": "シングルベッド", "artist": "シャ乱Q", "rank": 90 },
@@ -811,22 +756,12 @@
   { "age": 2026, "name": "ともに", "artist": "WANIMA", "rank": 290 },
   { "age": 2026, "name": "ロキ", "artist": "みきとP", "rank": 291 },
   { "age": 2026, "name": "ヒバナ", "artist": "DECO*27", "rank": 292 },
-  { "age": 2026, "name": "red thread", "artist": "Kobukuro", "rank": 293 },
-  { "age": 2026, "name": "Sunday", "artist": "back number", "rank": 294 },
-  { "age": 2026, "name": "Start", "artist": "Mrs. GREEN APPLE", "rank": 295 },
-  {
-    "age": 2026,
-    "name": "Become a flower",
-    "artist": "Green Yellow Society",
-    "rank": 296
-  },
-  { "age": 2026, "name": "GUTS!", "artist": "storm", "rank": 297 },
-  { "age": 2026, "name": "Charisma", "artist": "Snow Man", "rank": 298 },
-  {
-    "age": 2026,
-    "name": "Phantom Thief",
-    "artist": "back number",
-    "rank": 299
-  },
-  { "age": 2026, "name": "Carrying you", "artist": "Azumi Inoue", "rank": 300 }
+  { "age": 2026, "name": "赤い糸", "artist": "コブクロ", "rank": 293 },
+  { "age": 2026, "name": "日曜日", "artist": "back number", "rank": 294 },
+  { "age": 2026, "name": "StaRt", "artist": "Mrs. GREEN APPLE", "rank": 295 },
+  { "age": 2026, "name": "花になって", "artist": "緑黄色社会", "rank": 296 },
+  { "age": 2026, "name": "GUTS!", "artist": "嵐", "rank": 297 },
+  { "age": 2026, "name": "カリスマックス", "artist": "Snow Man", "rank": 298 },
+  { "age": 2026, "name": "怪盗", "artist": "back number", "rank": 299 },
+  { "age": 2026, "name": "君をのせて", "artist": "井上あずみ", "rank": 300 }
 ]
