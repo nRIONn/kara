@@ -18,6 +18,19 @@ DOCKER起動方法忘れたからローカルで起動します（20231207）
 
 デプロイはnpm run build してdocsにbuildされたファイル置いてプッシュ
 
+## FirstTakeデータの更新
+
+`.env.local.example`を`.env.local`にコピーし、`YOUTUBE_API_KEY`に
+YouTube Data API v3のキーを設定して実行します。
+
+```bash
+npm run update:first-take
+```
+
+GitHub Actionsでは、リポジトリSecretの`YOUTUBE_API_KEY`を使って
+毎週自動更新します。更新結果は
+`public/song_data/first_take.json`に保存されます。
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
